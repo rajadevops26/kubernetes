@@ -1,0 +1,35 @@
+************************* INSTALL IN UBUNTU KUBERNETES STEPS ****************
+cat /etc/issue
+vi /etc/hostname
+hostname k8master
+exec bash
+sudo -i
+apt-get update
+apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+apt-get update -y
+apt-get install -y docker.io
+apt-get install -y kubelet kubeadm kubectl
+********************************************** UPTO THIS IS COMMON FOR MASTER&AGENT/CLIENT NODES ***********
+
+******************************************************************************
+                           ON MASTER DOING 
+******************************************************************************
+kubeadm init
+kubectl get nodes
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl get nodes
+kubectl apply -f https://git.io/weave-kube-1.6
+kubectl get nodes
+kubectl get pods --all-namespaces
+******************************************************************************
+                           ON NODE DOING
+******************************************************************************
+##############  we need to add the token to the master
+
+kubeadm join 172.31.83.219:6443 --token vr9nmz.yucbbaxfcg0kl4ir --discovery-token-ca-cert-hash sha256:5eabb5c8930e7180e7a17d4a15618827fca089d49c26b15be81f4665e77cd93c
+
+#########   Run 'kubectl get nodes' on the master to see this node join the cluster
