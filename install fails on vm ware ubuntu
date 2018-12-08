@@ -1,0 +1,579 @@
+student@169.254.104.14's password:
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 10.8 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to student@169.254.104.14                            │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-34-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+297 packages can be updated.
+96 updates are security updates.
+
+Failed to connect to https://changelogs.ubuntu.com/meta-release-lts. Check your Internet connection or proxy settings
+
+Last login: Sat Dec  8 14:34:34 2018 from 169.254.104.11
+student@student:~$ sudo -i
+[sudo] password for student:
+root@student:~# apt-get update
+Hit:1 http://in.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://in.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Hit:4 http://in.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Reading package lists... Done
+root@student:~# apt-get install -y apt-transport-https
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 292 not upgraded.
+Need to get 1,692 B of archives.
+After this operation, 152 kB of additional disk space will be used.
+Get:1 http://183.82.14.14:80/pdata/038e6710a67b1853/in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 apt-transport-https all 1.6.6 [1,692 B]
+Fetched 1,692 B in 27s (63 B/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 155159 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_1.6.6_all.deb ...
+Unpacking apt-transport-https (1.6.6) ...
+Setting up apt-transport-https (1.6.6) ...
+root@student:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+0
+Command 'curl' not found, but can be installed with:
+
+apt install curl
+
+gpg: no valid OpenPGP data found.
+root@student:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+Command 'curl' not found, but can be installed with:
+
+apt install curl
+
+gpg: no valid OpenPGP data found.
+root@student:~# apt install curl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  libcurl4
+The following NEW packages will be installed:
+  curl libcurl4
+0 upgraded, 2 newly installed, 0 to remove and 292 not upgraded.
+Need to get 373 kB of archives.
+After this operation, 1,036 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libcurl4 amd64 7.58.0-2ubuntu3.5 [214 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 curl amd64 7.58.0-2ubuntu3.5 [159 kB]
+Fetched 373 kB in 11s (33.0 kB/s)
+Selecting previously unselected package libcurl4:amd64.
+(Reading database ... 155163 files and directories currently installed.)
+Preparing to unpack .../libcurl4_7.58.0-2ubuntu3.5_amd64.deb ...
+Unpacking libcurl4:amd64 (7.58.0-2ubuntu3.5) ...
+Selecting previously unselected package curl.
+Preparing to unpack .../curl_7.58.0-2ubuntu3.5_amd64.deb ...
+Unpacking curl (7.58.0-2ubuntu3.5) ...
+Setting up libcurl4:amd64 (7.58.0-2ubuntu3.5) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up curl (7.58.0-2ubuntu3.5) ...
+root@student:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+OK
+root@student:~# echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+root@student:~# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Hit:2 http://in.archive.ubuntu.com/ubuntu bionic InRelease
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [21.8 kB]
+Fetched 277 kB in 24s (11.5 kB/s)
+Reading package lists... Done
+root@student:~# apt-get install -y docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils cgroupfs-mount git git-man liberror-perl pigz ubuntu-fan
+Suggested packages:
+  aufs-tools btrfs-progs debootstrap docker-doc rinse zfs-fuse | zfsutils git-daemon-run
+  | git-daemon-sysvinit git-doc git-el git-email git-gui gitk gitweb git-cvs git-mediawiki git-svn
+The following NEW packages will be installed:
+  bridge-utils cgroupfs-mount docker.io git git-man liberror-perl pigz ubuntu-fan
+0 upgraded, 8 newly installed, 0 to remove and 292 not upgraded.
+Need to get 45.0 MB of archives.
+After this operation, 232 MB of additional disk space will be used.
+Get:1 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 pigz amd64 2.4-1 [57.4 kB]
+Get:2 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 bridge-utils amd64 1.5-15ubuntu1 [30.1 kB]
+Get:3 http://in.archive.ubuntu.com/ubuntu bionic/universe amd64 cgroupfs-mount all 1.4 [6,320 B]
+Get:4 http://in.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 docker.io amd64 18.06.1-0ubuntu1~18.04.1 [40.2 MB]
+Get:5 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 liberror-perl all 0.17025-1 [22.8 kB]
+Get:6 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 git-man all 1:2.17.1-1ubuntu0.4 [803 kB]
+Get:7 http://in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 git amd64 1:2.17.1-1ubuntu0.4 [3,907 kB]
+Get:8 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 ubuntu-fan all 0.12.10 [34.7 kB]
+Fetched 45.0 MB in 17s (2,605 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 155176 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.5-15ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.5-15ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../2-cgroupfs-mount_1.4_all.deb ...
+Unpacking cgroupfs-mount (1.4) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../3-docker.io_18.06.1-0ubuntu1~18.04.1_amd64.deb ...
+Unpacking docker.io (18.06.1-0ubuntu1~18.04.1) ...
+Selecting previously unselected package liberror-perl.
+Preparing to unpack .../4-liberror-perl_0.17025-1_all.deb ...
+Unpacking liberror-perl (0.17025-1) ...
+Selecting previously unselected package git-man.
+Preparing to unpack .../5-git-man_1%3a2.17.1-1ubuntu0.4_all.deb ...
+Unpacking git-man (1:2.17.1-1ubuntu0.4) ...
+Selecting previously unselected package git.
+Preparing to unpack .../6-git_1%3a2.17.1-1ubuntu0.4_amd64.deb ...
+Unpacking git (1:2.17.1-1ubuntu0.4) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../7-ubuntu-fan_0.12.10_all.deb ...
+Unpacking ubuntu-fan (0.12.10) ...
+Setting up git-man (1:2.17.1-1ubuntu0.4) ...
+Setting up docker.io (18.06.1-0ubuntu1~18.04.1) ...
+Adding group `docker' (GID 128) ...
+Done.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for ureadahead (0.100.0-20) ...
+Setting up liberror-perl (0.17025-1) ...
+Setting up cgroupfs-mount (1.4) ...
+Setting up bridge-utils (1.5-15ubuntu1) ...
+Setting up ubuntu-fan (0.12.10) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+Processing triggers for systemd (237-3ubuntu10.3) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up pigz (2.4-1) ...
+Setting up git (1:2.17.1-1ubuntu0.4) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+#root@student:~# apt-get install -y kubelet kubeadm kubectl
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  cri-tools ebtables ethtool kubernetes-cni socat
+The following NEW packages will be installed:
+  cri-tools ebtables ethtool kubeadm kubectl kubelet kubernetes-cni socat
+0 upgraded, 8 newly installed, 0 to remove and 292 not upgraded.
+Need to get 46.1 MB of archives.
+After this operation, 265 MB of additional disk space will be used.
+Get:1 http://183.82.14.14:80/data/038e691d14e4d7f6/in.archive.ubuntu.com/ubuntu bionic-updates/main amd64 ebtables amd64 2.0.10.4-3.5ubuntu2.18.04.3 [79.9 kB]
+Get:3 http://183.82.14.14:80/data/038ebb1df9e68210/in.archive.ubuntu.com/ubuntu bionic/main amd64 socat amd64 1.7.3.2-2ubuntu2 [342 kB]
+Get:2 http://183.82.14.138:80/data/038e021d25e5948b/in.archive.ubuntu.com/ubuntu bionic/main amd64 ethtool amd64 1:4.15-0ubuntu1 [114 kB]
+Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 cri-tools amd64 1.12.0-00 [5,343 kB]
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5,910 kB]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.13.0-00 [19.1 MB]
+Get:7 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.13.0-00 [7,841 kB]
+Get:8 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.13.0-00 [7,355 kB]
+Fetched 46.1 MB in 30s (1,526 kB/s)
+Selecting previously unselected package cri-tools.
+(Reading database ... 156354 files and directories currently installed.)
+Preparing to unpack .../0-cri-tools_1.12.0-00_amd64.deb ...
+Unpacking cri-tools (1.12.0-00) ...
+Selecting previously unselected package ebtables.
+Preparing to unpack .../1-ebtables_2.0.10.4-3.5ubuntu2.18.04.3_amd64.deb ...
+Unpacking ebtables (2.0.10.4-3.5ubuntu2.18.04.3) ...
+Selecting previously unselected package ethtool.
+Preparing to unpack .../2-ethtool_1%3a4.15-0ubuntu1_amd64.deb ...
+Unpacking ethtool (1:4.15-0ubuntu1) ...
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack .../3-kubernetes-cni_0.6.0-00_amd64.deb ...
+Unpacking kubernetes-cni (0.6.0-00) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../4-socat_1.7.3.2-2ubuntu2_amd64.deb ...
+Unpacking socat (1.7.3.2-2ubuntu2) ...
+Selecting previously unselected package kubelet.
+Preparing to unpack .../5-kubelet_1.13.0-00_amd64.deb ...
+Unpacking kubelet (1.13.0-00) ...
+Selecting previously unselected package kubectl.
+Preparing to unpack .../6-kubectl_1.13.0-00_amd64.deb ...
+Unpacking kubectl (1.13.0-00) ...
+Selecting previously unselected package kubeadm.
+Preparing to unpack .../7-kubeadm_1.13.0-00_amd64.deb ...
+Unpacking kubeadm (1.13.0-00) ...
+Setting up kubernetes-cni (0.6.0-00) ...
+Setting up cri-tools (1.12.0-00) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Setting up socat (1.7.3.2-2ubuntu2) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+Setting up ebtables (2.0.10.4-3.5ubuntu2.18.04.3) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ebtables.service → /lib/systemd/system/ebtables.service.
+update-rc.d: warning: start and stop actions are no longer supported; falling back to defaults
+Setting up kubectl (1.13.0-00) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up ethtool (1:4.15-0ubuntu1) ...
+Setting up kubelet (1.13.0-00) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → /lib/systemd/system/kubelet.service.
+Setting up kubeadm (1.13.0-00) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+root@student:~# kubeadm init
+I1208 15:40:37.177384    9447 version.go:94] could not fetch a Kubernetes version from the internet: unable to get URL "https://dl.k8s.io/release/stable-1.txt": Get https://dl.k8s.io/release/stable-1.txt: net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)
+I1208 15:40:37.178392    9447 version.go:95] falling back to the local client version: v1.13.0
+[init] Using Kubernetes version: v1.13.0
+[preflight] Running pre-flight checks
+        [WARNING Service-Docker]: docker service is not enabled, please run 'systemctl enable docker.service'
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR Swap]: running with swap on is not supported. Please disable swap
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+root@student:~# systemctl enable docker.service
+Synchronizing state of docker.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable docker
+root@student:~# kubeadm init
+[init] Using Kubernetes version: v1.13.0
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR Swap]: running with swap on is not supported. Please disable swap
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+root@student:~# kubeadm init --ignore-preflight-errors=...
+[init] Using Kubernetes version: v1.13.0
+[preflight] Running pre-flight checks
+error execution phase preflight: [preflight] Some fatal errors occurred:
+        [ERROR Swap]: running with swap on is not supported. Please disable swap
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+root@student:~# kubeadm init --ignore-preflight-errors
+Error: flag needs an argument: --ignore-preflight-errors
+Usage:
+  kubeadm init [flags]
+  kubeadm init [command]
+
+Available Commands:
+  phase       use this command to invoke single phase of the init workflow
+
+Flags:
+      --apiserver-advertise-address string   The IP address the API Server will advertise it's listening on. Specify '0.0.0.0' to use the address of the default network interface.
+      --apiserver-bind-port int32            Port for the API Server to bind to. (default 6443)
+      --apiserver-cert-extra-sans strings    Optional extra Subject Alternative Names (SANs) to use for the API Server serving certificate. Can be both IP addresses and DNS names.
+      --cert-dir string                      The path where to save and store the certificates. (default "/etc/kubernetes/pki")
+      --config string                        Path to kubeadm config file. WARNING: Usage of a configuration file is experimental.
+      --cri-socket string                    Specify the CRI socket to connect to. (default "/var/run/dockershim.sock")
+      --dry-run                              Don't apply any changes; just output what would be done.
+      --feature-gates string                 A set of key=value pairs that describe feature gates for various features. Options are:
+
+  -h, --help                                 help for init
+      --ignore-preflight-errors strings      A list of checks whose errors will be shown as warnings. Example: 'IsPrivilegedUser,Swap'. Value 'all' ignores errors from all checks.
+      --image-repository string              Choose a container registry to pull control plane images from (default "k8s.gcr.io")
+      --kubernetes-version string            Choose a specific Kubernetes version for the control plane. (default "stable-1")
+      --node-name string                     Specify the node name.
+      --pod-network-cidr string              Specify range of IP addresses for the pod network. If set, the control plane will automatically allocate CIDRs for every node.
+      --service-cidr string                  Use alternative range of IP address for service VIPs. (default "10.96.0.0/12")
+      --service-dns-domain string            Use alternative domain for services, e.g. "myorg.internal". (default "cluster.local")
+      --skip-phases strings                  List of phases to be skipped
+      --skip-token-print                     Skip printing of the default bootstrap token generated by 'kubeadm init'.
+      --token string                         The token to use for establishing bidirectional trust between nodes and masters. The format is [a-z0-9]{6}\.[a-z0-9]{16} - e.g. abcdef.0123456789abcdef
+      --token-ttl duration                   The duration before the token is automatically deleted (e.g. 1s, 2m, 3h). If set to '0', the token will never expire (default 24h0m0s)
+
+Global Flags:
+      --log-file string   If non-empty, use this log file
+      --rootfs string     [EXPERIMENTAL] The path to the 'real' host root filesystem.
+      --skip-headers      If true, avoid header prefixes in the log messages
+  -v, --v Level           log level for V logs
+
+Use "kubeadm init [command] --help" for more information about a command.
+
+error: flag needs an argument: --ignore-preflight-errors
+root@student:~# kubectl -v
+Error: flag needs an argument: 'v' in -v
+
+
+Basic Commands (Beginner):
+  create         Create a resource from a file or from stdin.
+  expose         Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service
+  run            Run a particular image on the cluster
+  set            Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain        Documentation of resources
+  get            Display one or many resources
+  edit           Edit a resource on the server
+  delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector
+
+Deploy Commands:
+  rollout        Manage the rollout of a resource
+  scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+  autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate    Modify certificate resources.
+  cluster-info   Display cluster info
+  top            Display Resource (CPU/Memory/Storage) usage.
+  cordon         Mark node as unschedulable
+  uncordon       Mark node as schedulable
+  drain          Drain node in preparation for maintenance
+  taint          Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe       Show details of a specific resource or group of resources
+  logs           Print the logs for a container in a pod
+  attach         Attach to a running container
+  exec           Execute a command in a container
+  port-forward   Forward one or more local ports to a pod
+  proxy          Run a proxy to the Kubernetes API server
+  cp             Copy files and directories to and from containers.
+  auth           Inspect authorization
+
+Advanced Commands:
+  diff           Diff live version against would-be applied version
+  apply          Apply a configuration to a resource by filename or stdin
+  patch          Update field(s) of a resource using strategic merge patch
+  replace        Replace a resource by filename or stdin
+  wait           Experimental: Wait for a specific condition on one or many resources.
+  convert        Convert config files between different API versions
+
+Settings Commands:
+  label          Update the labels on a resource
+  annotate       Update the annotations on a resource
+  completion     Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  api-resources  Print the supported API resources on the server
+  api-versions   Print the supported API versions on the server, in the form of "group/version"
+  config         Modify kubeconfig files
+  plugin         Provides utilities for interacting with plugins.
+  version        Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+
+flag needs an argument: 'v' in -v
+root@student:~# kubectl -version
+Error: invalid argument "ersion" for "-v, --v" flag: strconv.Atoi: parsing "ersion": invalid syntax
+
+
+Basic Commands (Beginner):
+  create         Create a resource from a file or from stdin.
+  expose         Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service
+  run            Run a particular image on the cluster
+  set            Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain        Documentation of resources
+  get            Display one or many resources
+  edit           Edit a resource on the server
+  delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector
+
+Deploy Commands:
+  rollout        Manage the rollout of a resource
+  scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+  autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate    Modify certificate resources.
+  cluster-info   Display cluster info
+  top            Display Resource (CPU/Memory/Storage) usage.
+  cordon         Mark node as unschedulable
+  uncordon       Mark node as schedulable
+  drain          Drain node in preparation for maintenance
+  taint          Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe       Show details of a specific resource or group of resources
+  logs           Print the logs for a container in a pod
+  attach         Attach to a running container
+  exec           Execute a command in a container
+  port-forward   Forward one or more local ports to a pod
+  proxy          Run a proxy to the Kubernetes API server
+  cp             Copy files and directories to and from containers.
+  auth           Inspect authorization
+
+Advanced Commands:
+  diff           Diff live version against would-be applied version
+  apply          Apply a configuration to a resource by filename or stdin
+  patch          Update field(s) of a resource using strategic merge patch
+  replace        Replace a resource by filename or stdin
+  wait           Experimental: Wait for a specific condition on one or many resources.
+  convert        Convert config files between different API versions
+
+Settings Commands:
+  label          Update the labels on a resource
+  annotate       Update the annotations on a resource
+  completion     Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  api-resources  Print the supported API resources on the server
+  api-versions   Print the supported API versions on the server, in the form of "group/version"
+  config         Modify kubeconfig files
+  plugin         Provides utilities for interacting with plugins.
+  version        Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+
+invalid argument "ersion" for "-v, --v" flag: strconv.Atoi: parsing "ersion": invalid syntax
+root@student:~# kubectl --version
+Error: unknown flag: --version
+
+
+Basic Commands (Beginner):
+  create         Create a resource from a file or from stdin.
+  expose         Take a replication controller, service, deployment or pod and expose it as a new Kubernetes Service
+  run            Run a particular image on the cluster
+  set            Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain        Documentation of resources
+  get            Display one or many resources
+  edit           Edit a resource on the server
+  delete         Delete resources by filenames, stdin, resources and names, or by resources and label selector
+
+Deploy Commands:
+  rollout        Manage the rollout of a resource
+  scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+  autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate    Modify certificate resources.
+  cluster-info   Display cluster info
+  top            Display Resource (CPU/Memory/Storage) usage.
+  cordon         Mark node as unschedulable
+  uncordon       Mark node as schedulable
+  drain          Drain node in preparation for maintenance
+  taint          Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe       Show details of a specific resource or group of resources
+  logs           Print the logs for a container in a pod
+  attach         Attach to a running container
+  exec           Execute a command in a container
+  port-forward   Forward one or more local ports to a pod
+  proxy          Run a proxy to the Kubernetes API server
+  cp             Copy files and directories to and from containers.
+  auth           Inspect authorization
+
+Advanced Commands:
+  diff           Diff live version against would-be applied version
+  apply          Apply a configuration to a resource by filename or stdin
+  patch          Update field(s) of a resource using strategic merge patch
+  replace        Replace a resource by filename or stdin
+  wait           Experimental: Wait for a specific condition on one or many resources.
+  convert        Convert config files between different API versions
+
+Settings Commands:
+  label          Update the labels on a resource
+  annotate       Update the annotations on a resource
+  completion     Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  api-resources  Print the supported API resources on the server
+  api-versions   Print the supported API versions on the server, in the form of "group/version"
+  config         Modify kubeconfig files
+  plugin         Provides utilities for interacting with plugins.
+  version        Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+
+unknown flag: --version
+root@student:~# kubectl --help
+kubectl controls the Kubernetes cluster manager.
+
+Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+
+Basic Commands (Beginner):
+  create         Create a resource from a file or from stdin.
+  expose         Take a replication controller, service, deployment or pod and expose it as a new
+Kubernetes Service
+  run            Run a particular image on the cluster
+  set            Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain        Documentation of resources
+  get            Display one or many resources
+  edit           Edit a resource on the server
+  delete         Delete resources by filenames, stdin, resources and names, or by resources and
+label selector
+
+Deploy Commands:
+  rollout        Manage the rollout of a resource
+  scale          Set a new size for a Deployment, ReplicaSet, Replication Controller, or Job
+  autoscale      Auto-scale a Deployment, ReplicaSet, or ReplicationController
+
+Cluster Management Commands:
+  certificate    Modify certificate resources.
+  cluster-info   Display cluster info
+  top            Display Resource (CPU/Memory/Storage) usage.
+  cordon         Mark node as unschedulable
+  uncordon       Mark node as schedulable
+  drain          Drain node in preparation for maintenance
+  taint          Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe       Show details of a specific resource or group of resources
+  logs           Print the logs for a container in a pod
+  attach         Attach to a running container
+  exec           Execute a command in a container
+  port-forward   Forward one or more local ports to a pod
+  proxy          Run a proxy to the Kubernetes API server
+  cp             Copy files and directories to and from containers.
+  auth           Inspect authorization
+
+Advanced Commands:
+  diff           Diff live version against would-be applied version
+  apply          Apply a configuration to a resource by filename or stdin
+  patch          Update field(s) of a resource using strategic merge patch
+  replace        Replace a resource by filename or stdin
+  wait           Experimental: Wait for a specific condition on one or many resources.
+  convert        Convert config files between different API versions
+
+Settings Commands:
+  label          Update the labels on a resource
+  annotate       Update the annotations on a resource
+  completion     Output shell completion code for the specified shell (bash or zsh)
+
+Other Commands:
+  api-resources  Print the supported API resources on the server
+  api-versions   Print the supported API versions on the server, in the form of "group/version"
+  config         Modify kubeconfig files
+  plugin         Provides utilities for interacting with plugins.
+  version        Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+root@student:~# kubectl api-versions
+error: Couldn't get available api versions from server: Get http://localhost:8080/api?timeout=32s: dial tcp 127.0.0.1:8080: connect: connection refused
+root@student:~# kubectl --help
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: Software caused connection abort
