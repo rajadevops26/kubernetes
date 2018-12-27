@@ -1,0 +1,40 @@
+https://www.virtualbox.org/wiki/Linux_Downloads
+wget https://download.virtualbox.org/virtualbox/6.0.0/virtualbox-6.0_6.0.0-127566~Ubuntu~bionic_amd64.deb
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+sudo apt-get update
+
+
+
+
+
+
+apt-get install -y virtualbox virtualbox-ext-pack
+
+sudo apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+apt-get update
+apt-get install -y kubectl
+kubectl version
+https://github.com/kubernetes/minikube/releases
+wget https://github.com/kubernetes/minikube/releases/download/v0.32.0/minikube_0.32-0.deb
+dpkg -i minikube_.deb
+minikube service web
+minikube start --vm-driver=none
+minikube dashboard
+kubectl describe node minikube
+minikube stop
+
+
+to enable bios
+grep --color vmx /proc/cpuinfo ## for an Intel processor
+grep --color svm /proc/cpuinfo ## for an AMD processor
+vi /proc/cpuinfo
+
+
+
+sudo dmidecode | less------------bios information
+lscpu
+------------- if it is intel----------------------------
+egrep -wo 'vmx|ept|vpid|npt|tpr_shadow|flexpriority|vnmi|lm|aes' /proc/cpuinfo  | sort | uniq
