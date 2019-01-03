@@ -1,0 +1,528 @@
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 11.0 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@3.83.137.199                               │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jan  3 10:26:43 UTC 2019
+
+  System load:  0.6               Processes:           115
+  Usage of /:   13.3% of 7.69GB   Users logged in:     0
+  Memory usage: 4%                IP address for eth0: 172.31.91.246
+  Swap usage:   0%
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+/usr/bin/xauth:  file /home/ubuntu/.Xauthority does not exist
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-91-246:~$ sudo -i
+root@ip-172-31-91-246:~# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease [88.7 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease [74.6 kB]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Sources [181 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main Sources [829 kB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/restricted Sources [5324 B]
+Get:7 http://security.ubuntu.com/ubuntu bionic-security InRelease [83.2 kB]
+Get:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Sources [9051 kB]
+Get:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 Packages [8570 kB]
+Get:10 http://security.ubuntu.com/ubuntu bionic-security/universe Sources [28.6 kB]
+Get:11 http://security.ubuntu.com/ubuntu bionic-security/main Sources [66.7 kB]
+Get:12 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe Translation-en [4941 kB]
+Get:13 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse amd64 Packages [151 kB]
+Get:14 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/multiverse Translation-en [108 kB]
+Get:15 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Sources [121 kB]
+Get:16 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Sources [3824 B]
+Get:17 http://security.ubuntu.com/ubuntu bionic-security/multiverse Sources [1336 B]
+Get:18 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Sources [224 kB]
+Get:19 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Sources [2064 B]
+Get:20 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main amd64 Packages [476 kB]
+Get:21 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/main Translation-en [177 kB]
+Get:22 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted amd64 Packages [6992 B]
+Get:23 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/restricted Translation-en [3076 B]
+Get:24 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 Packages [706 kB]
+Get:25 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe Translation-en [171 kB]
+Get:26 http://security.ubuntu.com/ubuntu bionic-security/main amd64 Packages [235 kB]
+Get:27 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse amd64 Packages [6372 B]
+Get:28 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/multiverse Translation-en [3356 B]
+Get:29 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Sources [2068 B]
+Get:30 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe amd64 Packages [3468 B]
+Get:31 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports/universe Translation-en [1604 B]
+Get:32 http://security.ubuntu.com/ubuntu bionic-security/main Translation-en [88.9 kB]
+Get:33 http://security.ubuntu.com/ubuntu bionic-security/universe amd64 Packages [110 kB]
+Get:34 http://security.ubuntu.com/ubuntu bionic-security/universe Translation-en [62.2 kB]
+Get:35 http://security.ubuntu.com/ubuntu bionic-security/multiverse amd64 Packages [1440 B]
+Get:36 http://security.ubuntu.com/ubuntu bionic-security/multiverse Translation-en [996 B]
+Fetched 26.6 MB in 4s (6006 kB/s)
+Reading package lists... Done
+root@ip-172-31-91-246:~# apt-get update && sudo apt-get install -y apt-transport-https
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Reading package lists... Done
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following NEW packages will be installed:
+  apt-transport-https
+0 upgraded, 1 newly installed, 0 to remove and 120 not upgraded.
+Need to get 1692 B of archives.
+After this operation, 152 kB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 apt-transport-https all 1.6.6 [1692 B]
+Fetched 1692 B in 0s (0 B/s)
+Selecting previously unselected package apt-transport-https.
+(Reading database ... 56473 files and directories currently installed.)
+Preparing to unpack .../apt-transport-https_1.6.6_all.deb ...
+Unpacking apt-transport-https (1.6.6) ...
+Setting up apt-transport-https (1.6.6) ...
+root@ip-172-31-91-246:~# curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+OK
+root@ip-172-31-91-246:~# echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+root@ip-172-31-91-246:~# apt-get update
+Hit:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic InRelease
+Hit:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates InRelease
+Hit:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-backports InRelease
+Hit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8993 B]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [22.6 kB]
+Fetched 31.6 kB in 1s (45.8 kB/s)
+Reading package lists... Done
+root@ip-172-31-91-246:~# apt-get install -y docker.io
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils cgroupfs-mount libltdl7 pigz ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools debootstrap docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils cgroupfs-mount docker.io libltdl7 pigz ubuntu-fan
+0 upgraded, 6 newly installed, 0 to remove and 120 not upgraded.
+Need to get 40.3 MB of archives.
+After this operation, 198 MB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 pigz amd64 2.4-1 [57.4 kB]
+Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 bridge-utils amd64 1.5-15ubuntu1 [30.1 kB]
+Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/universe amd64 cgroupfs-mount all 1.4 [6320 B]
+Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 libltdl7 amd64 2.4.6-2 [38.8 kB]
+Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic-updates/universe amd64 docker.io amd64 18.06.1-0ubuntu1~18.04.1 [40.2 MB]
+Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 ubuntu-fan all 0.12.10 [34.7 kB]
+Fetched 40.3 MB in 1s (37.7 MB/s)
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... 56477 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.5-15ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.5-15ubuntu1) ...
+Selecting previously unselected package cgroupfs-mount.
+Preparing to unpack .../2-cgroupfs-mount_1.4_all.deb ...
+Unpacking cgroupfs-mount (1.4) ...
+Selecting previously unselected package libltdl7:amd64.
+Preparing to unpack .../3-libltdl7_2.4.6-2_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.6-2) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../4-docker.io_18.06.1-0ubuntu1~18.04.1_amd64.deb ...
+Unpacking docker.io (18.06.1-0ubuntu1~18.04.1) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../5-ubuntu-fan_0.12.10_all.deb ...
+Unpacking ubuntu-fan (0.12.10) ...
+Processing triggers for ureadahead (0.100.0-20) ...
+Setting up cgroupfs-mount (1.4) ...
+Setting up bridge-utils (1.5-15ubuntu1) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Setting up ubuntu-fan (0.12.10) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/ubuntu-fan.service → /lib/systemd/system/ubuntu-fan.service.
+Processing triggers for systemd (237-3ubuntu10.3) ...
+Setting up libltdl7:amd64 (2.4.6-2) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up pigz (2.4-1) ...
+Setting up docker.io (18.06.1-0ubuntu1~18.04.1) ...
+Adding group `docker' (GID 115) ...
+Done.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+Processing triggers for ureadahead (0.100.0-20) ...
+Processing triggers for libc-bin (2.27-3ubuntu1) ...
+Processing triggers for systemd (237-3ubuntu10.3) ...
+root@ip-172-31-91-246:~# apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  cri-tools socat
+The following NEW packages will be installed:
+  cri-tools kubeadm kubectl kubelet kubernetes-cni socat
+0 upgraded, 6 newly installed, 0 to remove and 120 not upgraded.
+Need to get 45.8 MB of archives.
+After this operation, 264 MB of additional disk space will be used.
+Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu bionic/main amd64 socat amd64 1.7.3.2-2ubuntu2 [342 kB]
+Get:2 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 cri-tools amd64 1.12.0-00 [5343 kB]
+Get:3 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubernetes-cni amd64 0.6.0-00 [5910 kB]
+Get:4 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubelet amd64 1.13.1-00 [19.0 MB]
+Get:5 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubectl amd64 1.13.1-00 [7843 kB]
+Get:6 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.13.1-00 [7359 kB]
+Fetched 45.8 MB in 6s (8270 kB/s)
+Selecting previously unselected package cri-tools.
+(Reading database ... 56758 files and directories currently installed.)
+Preparing to unpack .../0-cri-tools_1.12.0-00_amd64.deb ...
+Unpacking cri-tools (1.12.0-00) ...
+Selecting previously unselected package kubernetes-cni.
+Preparing to unpack .../1-kubernetes-cni_0.6.0-00_amd64.deb ...
+Unpacking kubernetes-cni (0.6.0-00) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../2-socat_1.7.3.2-2ubuntu2_amd64.deb ...
+Unpacking socat (1.7.3.2-2ubuntu2) ...
+Selecting previously unselected package kubelet.
+Preparing to unpack .../3-kubelet_1.13.1-00_amd64.deb ...
+Unpacking kubelet (1.13.1-00) ...
+Selecting previously unselected package kubectl.
+Preparing to unpack .../4-kubectl_1.13.1-00_amd64.deb ...
+Unpacking kubectl (1.13.1-00) ...
+Selecting previously unselected package kubeadm.
+Preparing to unpack .../5-kubeadm_1.13.1-00_amd64.deb ...
+Unpacking kubeadm (1.13.1-00) ...
+Setting up kubernetes-cni (0.6.0-00) ...
+Setting up cri-tools (1.12.0-00) ...
+Setting up socat (1.7.3.2-2ubuntu2) ...
+Setting up kubelet (1.13.1-00) ...
+Created symlink /etc/systemd/system/multi-user.target.wants/kubelet.service → /lib/systemd/system/kubelet.service.
+Setting up kubectl (1.13.1-00) ...
+Processing triggers for man-db (2.8.3-2) ...
+Setting up kubeadm (1.13.1-00) ...
+root@ip-172-31-91-246:~# kubeadm init
+[init] Using Kubernetes version: v1.13.1
+[preflight] Running pre-flight checks
+        [WARNING Service-Docker]: docker service is not enabled, please run 'systemctl enable docker.service'
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Activating the kubelet service
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [ip-172-31-91-246 localhost] and IPs [172.31.91.246 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [ip-172-31-91-246 localhost] and IPs [172.31.91.246 127.0.0.1 ::1]
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [ip-172-31-91-246 kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 172.31.91.246]
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[apiclient] All control plane components are healthy after 21.002431 seconds
+[uploadconfig] storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.13" in namespace kube-system with the configuration for the kubelets in the cluster
+[patchnode] Uploading the CRI Socket information "/var/run/dockershim.sock" to the Node API object "ip-172-31-91-246" as an annotation
+[mark-control-plane] Marking the node ip-172-31-91-246 as control-plane by adding the label "node-role.kubernetes.io/master=''"
+[mark-control-plane] Marking the node ip-172-31-91-246 as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 9l8llq.nz4998v7puwdt2v6
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstraptoken] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstraptoken] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstraptoken] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstraptoken] creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 172.31.91.246:6443 --token 9l8llq.nz4998v7puwdt2v6 --discovery-token-ca-cert-hash sha256:39559805b45d28e594e065305a1d48cf57d54bb95da0c64d3fafbae011eab00f
+
+root@ip-172-31-91-246:~#   mkdir -p $HOME/.kube
+root@ip-172-31-91-246:~#   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+root@ip-172-31-91-246:~#   sudo chown $(id -u):$(id -g) $HOME/.kube/config
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS     ROLES    AGE   VERSION
+ip-172-31-91-246   NotReady   master   44s   v1.13.1
+root@ip-172-31-91-246:~#  kubectl apply -f https://git.io/weave-kube-1.6
+serviceaccount/weave-net created
+clusterrole.rbac.authorization.k8s.io/weave-net created
+clusterrolebinding.rbac.authorization.k8s.io/weave-net created
+role.rbac.authorization.k8s.io/weave-net created
+rolebinding.rbac.authorization.k8s.io/weave-net created
+daemonset.extensions/weave-net created
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS     ROLES    AGE   VERSION
+ip-172-31-91-246   NotReady   master   87s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS     ROLES    AGE   VERSION
+ip-172-31-91-246   NotReady   master   97s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS     ROLES    AGE   VERSION
+ip-172-31-91-246   NotReady   master   99s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS     ROLES    AGE    VERSION
+ip-172-31-91-246   NotReady   master   100s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS   ROLES    AGE    VERSION
+ip-172-31-91-246   Ready    master   102s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get nodes
+NAME               STATUS   ROLES    AGE    VERSION
+ip-172-31-91-246   Ready    master   104s   v1.13.1
+root@ip-172-31-91-246:~# kubectl get pods --all-namespaces
+NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
+kube-system   coredns-86c58d9df4-2hr45                   1/1     Running   0          107s
+kube-system   coredns-86c58d9df4-ldw94                   1/1     Running   0          107s
+kube-system   etcd-ip-172-31-91-246                      1/1     Running   0          57s
+kube-system   kube-apiserver-ip-172-31-91-246            1/1     Running   0          60s
+kube-system   kube-controller-manager-ip-172-31-91-246   1/1     Running   0          44s
+kube-system   kube-proxy-xct5m                           1/1     Running   0          107s
+kube-system   kube-scheduler-ip-172-31-91-246            1/1     Running   0          39s
+kube-system   weave-net-njwln                            2/2     Running   0          32s
+root@ip-172-31-91-246:~#  kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+error: unable to read URL "https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml", server reported 404 Not Found, status code=404
+root@ip-172-31-91-246:~#  kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+error: unable to read URL "https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml", server reported 404 Not Found, status code=404
+root@ip-172-31-91-246:~#
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: Software caused connection abort
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 11.0 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@3.83.137.199                               │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jan  3 10:38:12 UTC 2019
+
+  System load:  0.06              Users logged in:        1
+  Usage of /:   34.6% of 7.69GB   IP address for eth0:    172.31.91.246
+  Memory usage: 21%               IP address for docker0: 172.17.0.1
+  Swap usage:   0%                IP address for weave:   10.32.0.1
+  Processes:    144
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+126 packages can be updated.
+49 updates are security updates.
+
+
+Last login: Thu Jan  3 10:26:46 2019 from 124.123.84.246
+ubuntu@ip-172-31-91-246:~$ sudo -i
+root@ip-172-31-91-246:~# kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+secret/kubernetes-dashboard-certs created
+serviceaccount/kubernetes-dashboard created
+role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+deployment.apps/kubernetes-dashboard created
+service/kubernetes-dashboard created
+root@ip-172-31-91-246:~# kubectl get svc --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         9m33s
+kube-system   kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   9m29s
+kube-system   kubernetes-dashboard   ClusterIP   10.103.195.121   <none>        443/TCP         14s
+root@ip-172-31-91-246:~#  kubectl -n kube-system edit svc kubernetes-dashboard
+service/kubernetes-dashboard edited
+root@ip-172-31-91-246:~# cd /etc/kubernetes/manifests/
+root@ip-172-31-91-246:/etc/kubernetes/manifests# ls
+etcd.yaml  kube-apiserver.yaml  kube-controller-manager.yaml  kube-scheduler.yaml
+root@ip-172-31-91-246:/etc/kubernetes/manifests# vi raja.yml
+root@ip-172-31-91-246:/etc/kubernetes/manifests# top
+top - 10:47:01 up 20 min,  2 users,  load average: 0.12, 0.14, 0.15
+Tasks: 150 total,   1 running, 112 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.7 us,  0.7 sy,  0.0 ni, 97.3 id,  0.0 wa,  0.0 hi,  0.0 si,  0.3 st
+KiB Mem :  4038192 total,  1078524 free,   722240 used,  2237428 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  3051696 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 5571 root      20   0  447384 284528  63184 S   3.0  7.0   0:31.01 kube-apiserver
+ 5481 root      20   0  205268 104564  53804 S   2.3  2.6   0:23.09 kube-controller
+ 5099 root      20   0 1337304  90968  55968 S   2.0  2.3   0:27.63 kubelet
+ 5521 root      20   0 10.054g  45036  16112 S   1.3  1.1   0:12.61 etcd
+ 4045 root      20   0 1272444  98296  37624 S   1.0  2.4   0:21.98 dockerd
+ 5620 root      20   0  139552  34144  25460 S   1.0  0.8   0:09.48 kube-scheduler
+  699 root      20   0  287992   6944   6088 S   0.3  0.2   0:00.06 accounts-daemon
+ 4063 root      20   0 1290120  38408  22040 S   0.3  1.0   0:03.66 docker-containe
+ 5903 root      20   0  137148  28352  21788 S   0.3  0.7   0:02.22 kube-proxy
+ 7580 root      20   0  141984  30316  24156 S   0.3  0.8   0:01.70 coredns
+13533 root      20   0   44552   3956   3368 R   0.3  0.1   0:00.40 top
+    1 root      20   0  159864   9264   6792 S   0.0  0.2   0:03.66 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/0:0H
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.17 ksoftirqd/0
+    8 root      20   0       0      0      0 I   0.0  0.0   0:00.55 rcu_sched
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/0
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/1
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/1
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.12 ksoftirqd/1
+   17 root      20   0       0      0      0 I   0.0  0.0   0:00.04 kworker/1:0
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/1:0H
+root@ip-172-31-91-246:/etc/kubernetes/manifests# kubectl get svc --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         17m
+kube-system   kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   17m
+kube-system   kubernetes-dashboard   NodePort    10.103.195.121   <none>        443:31618/TCP   8m20s
+root@ip-172-31-91-246:/etc/kubernetes/manifests# top
+top - 10:50:43 up 24 min,  2 users,  load average: 0.02, 0.07, 0.11
+Tasks: 150 total,   1 running, 112 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.4 us,  0.5 sy,  0.0 ni, 97.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.3 st
+KiB Mem :  4038192 total,  1077788 free,   722316 used,  2238088 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  3051596 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 5099 root      20   0 1337304  90968  55968 S   2.0  2.3   0:33.46 kubelet
+ 5481 root      20   0  205268 104948  53804 S   2.0  2.6   0:27.64 kube-controller
+ 5571 root      20   0  447384 285056  63184 S   1.7  7.1   0:35.66 kube-apiserver
+ 5521 root      20   0 10.055g  45036  16112 S   1.3  1.1   0:15.00 etcd
+ 4045 root      20   0 1272444  98296  37624 S   1.0  2.4   0:24.30 dockerd
+ 5620 root      20   0  139552  34604  25780 S   1.0  0.9   0:11.20 kube-scheduler
+ 4063 root      20   0 1290120  38408  22040 S   0.3  1.0   0:04.35 docker-containe
+    1 root      20   0  159864   9264   6792 S   0.0  0.2   0:03.67 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/0:0H
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.19 ksoftirqd/0
+    8 root      20   0       0      0      0 I   0.0  0.0   0:00.63 rcu_sched
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/0
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/1
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/1
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.13 ksoftirqd/1
+   17 root      20   0       0      0      0 I   0.0  0.0   0:00.05 kworker/1:0
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/1:0H
+   19 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   20 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 netns
+   21 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_tasks_kthre
+   22 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kauditd
+root@ip-172-31-91-246:/etc/kubernetes/manifests# vi raja.yml
+root@ip-172-31-91-246:/etc/kubernetes/manifests# kubectl create -f raja.yml
+serviceaccount/admin created
+root@ip-172-31-91-246:/etc/kubernetes/manifests# cd
+root@ip-172-31-91-246:~# kubectl create deployment nginx --image=nginx
+deployment.apps/nginx created
+root@ip-172-31-91-246:~# kubectl run test --port 80 --image nginx --replicas=5
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/test created
+root@ip-172-31-91-246:~# kubectl create service nodeport nginx --tcp=80:80
+service/nginx created
+root@ip-172-31-91-246:~# kubectl get svc --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         23m
+default       nginx                  NodePort    10.99.204.253    <none>        80:32513/TCP    6s
+kube-system   kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   23m
+kube-system   kubernetes-dashboard   NodePort    10.103.195.121   <none>        443:31618/TCP   14m
+root@ip-172-31-91-246:~# docker ps
+CONTAINER ID        IMAGE                                   COMMAND                  CREATED             STATUS              PORTS               NAMES
+5a0a221b4987        k8s.gcr.io/kubernetes-dashboard-amd64   "/dashboard --insecu…"   14 minutes ago      Up 14 minutes                           k8s_kubernetes-dashboard_kubernetes-dashboard-57df4db6b-klsdx_kube-system_bedc5059-0f43-11e9-9510-128591a334f8_0
+3d35f9a41515        k8s.gcr.io/pause:3.1                    "/pause"                 14 minutes ago      Up 14 minutes                           k8s_POD_kubernetes-dashboard-57df4db6b-klsdx_kube-system_bedc5059-0f43-11e9-9510-128591a334f8_0
+012ebb00d2fd        f59dcacceff4                            "/coredns -conf /etc…"   21 minutes ago      Up 21 minutes                           k8s_coredns_coredns-86c58d9df4-ldw94_kube-system_778a1e09-0f42-11e9-9510-128591a334f8_0
+960d4959e322        f59dcacceff4                            "/coredns -conf /etc…"   21 minutes ago      Up 21 minutes                           k8s_coredns_coredns-86c58d9df4-2hr45_kube-system_7789208e-0f42-11e9-9510-128591a334f8_0
+0e0af5dcb921        k8s.gcr.io/pause:3.1                    "/pause"                 21 minutes ago      Up 21 minutes                           k8s_POD_coredns-86c58d9df4-ldw94_kube-system_778a1e09-0f42-11e9-9510-128591a334f8_0
+27338dba748e        k8s.gcr.io/pause:3.1                    "/pause"                 21 minutes ago      Up 21 minutes                           k8s_POD_coredns-86c58d9df4-2hr45_kube-system_7789208e-0f42-11e9-9510-128591a334f8_0
+89f080f09214        weaveworks/weave-npc                    "/usr/bin/weave-npc"     22 minutes ago      Up 22 minutes                           k8s_weave-npc_weave-net-njwln_kube-system_a424065b-0f42-11e9-9510-128591a334f8_0
+75662aaaa46b        weaveworks/weave-kube                   "/home/weave/launch.…"   22 minutes ago      Up 22 minutes                           k8s_weave_weave-net-njwln_kube-system_a424065b-0f42-11e9-9510-128591a334f8_0
+e494207ac8c7        k8s.gcr.io/pause:3.1                    "/pause"                 22 minutes ago      Up 22 minutes                           k8s_POD_weave-net-njwln_kube-system_a424065b-0f42-11e9-9510-128591a334f8_0
+35f3b74c06c0        fdb321fd30a0                            "/usr/local/bin/kube…"   23 minutes ago      Up 23 minutes                           k8s_kube-proxy_kube-proxy-xct5m_kube-system_778e97b9-0f42-11e9-9510-128591a334f8_0
+18abe952e231        k8s.gcr.io/pause:3.1                    "/pause"                 23 minutes ago      Up 23 minutes                           k8s_POD_kube-proxy-xct5m_kube-system_778e97b9-0f42-11e9-9510-128591a334f8_0
+33392b9d1703        ab81d7360408                            "kube-scheduler --ad…"   23 minutes ago      Up 23 minutes                           k8s_kube-scheduler_kube-scheduler-ip-172-31-91-246_kube-system_44b569a35761491825f4e7253fbf0543_0
+2a4c09b991bb        40a63db91ef8                            "kube-apiserver --au…"   23 minutes ago      Up 23 minutes                           k8s_kube-apiserver_kube-apiserver-ip-172-31-91-246_kube-system_d20152f3a66a011b77844534f81164e1_0
+6b1795ee9f82        3cab8e1b9802                            "etcd --advertise-cl…"   23 minutes ago      Up 23 minutes                           k8s_etcd_etcd-ip-172-31-91-246_kube-system_2bb83e767040c3865121c1928fce57be_0
+c52b8472f547        26e6f1db2a52                            "kube-controller-man…"   23 minutes ago      Up 23 minutes                           k8s_kube-controller-manager_kube-controller-manager-ip-172-31-91-246_kube-system_545f68d192dc9b96e8def97037203bf3_0
+f9f67e7354fb        k8s.gcr.io/pause:3.1                    "/pause"                 23 minutes ago      Up 23 minutes                           k8s_POD_kube-scheduler-ip-172-31-91-246_kube-system_44b569a35761491825f4e7253fbf0543_0
+61cd722f7704        k8s.gcr.io/pause:3.1                    "/pause"                 23 minutes ago      Up 23 minutes                           k8s_POD_kube-controller-manager-ip-172-31-91-246_kube-system_545f68d192dc9b96e8def97037203bf3_0
+6c47f8051d21        k8s.gcr.io/pause:3.1                    "/pause"                 23 minutes ago      Up 23 minutes                           k8s_POD_kube-apiserver-ip-172-31-91-246_kube-system_d20152f3a66a011b77844534f81164e1_0
+0d424b975a88        k8s.gcr.io/pause:3.1                    "/pause"                 23 minutes ago      Up 23 minutes                           k8s_POD_etcd-ip-172-31-91-246_kube-system_2bb83e767040c3865121c1928fce57be_0
+root@ip-172-31-91-246:~# kubectl get svc --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         23m
+default       nginx                  NodePort    10.99.204.253    <none>        80:32513/TCP    30s
+kube-system   kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   23m
+kube-system   kubernetes-dashboard   NodePort    10.103.195.121   <none>        443:31618/TCP   14m
+root@ip-172-31-91-246:~#
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: Software caused connection abort
