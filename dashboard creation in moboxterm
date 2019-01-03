@@ -526,3 +526,684 @@ Session stopped
     - Press S to save terminal output to file
 
 Network error: Software caused connection abort
+*******************************************************************************************************
+Authenticating with public key "imported-openssh-key"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 11.0 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@3.83.137.199                               │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.1 LTS (GNU/Linux 4.15.0-1021-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Jan  3 11:22:54 UTC 2019
+
+  System load:  0.24              Users logged in:        1
+  Usage of /:   36.1% of 7.69GB   IP address for eth0:    172.31.91.246
+  Memory usage: 21%               IP address for docker0: 172.17.0.1
+  Swap usage:   0%                IP address for weave:   10.32.0.1
+  Processes:    164
+
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+126 packages can be updated.
+49 updates are security updates.
+
+
+Last login: Thu Jan  3 11:04:00 2019 from 124.123.84.246
+ubuntu@ip-172-31-91-246:~$ sudo -i
+root@ip-172-31-91-246:~# kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin | awk '{print $1}')
+Name:         admin-token-ggcvp
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: admin
+              kubernetes.io/service-account.uid: 9a3ad902-0f45-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi10b2tlbi1nZ2N2cCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJhZG1pbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjlhM2FkOTAyLTBmNDUtMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTphZG1pbiJ9.n92rZcCTLAmmadv3T7i3AnYIKg-wjgTYcbWZHshW947lgFWzqTuC0c3KlAtwk2pThd5UNmiEDMxpSzi5N8PUg4wNaWKYUK_E2pt3H56nRc3Imsps8rB8q904O4X1SZk3Kc5soBNqKk8YL3ShuzmBzaDHwdWf0TlQLIHC5VxweckpF88kXNXxqT_Lc4boDPWqP0jJXV8Qp6V4r2Tw4KoPVSh0K5Af0QKMjFQOyQqEfOwurZiJZloERdN0EWvuy2Rv7-5Es0Smkj6pPWuHkC_RWN3hLAmQ7zCTYx9BmaFYt0YowxTJegCcJ8Y7s4iRcfP1XnhMDy7jhIl_a0O8XFtcjg
+root@ip-172-31-91-246:~# kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
+Name:         admin-token-ggcvp
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: admin
+              kubernetes.io/service-account.uid: 9a3ad902-0f45-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi10b2tlbi1nZ2N2cCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJhZG1pbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjlhM2FkOTAyLTBmNDUtMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTphZG1pbiJ9.n92rZcCTLAmmadv3T7i3AnYIKg-wjgTYcbWZHshW947lgFWzqTuC0c3KlAtwk2pThd5UNmiEDMxpSzi5N8PUg4wNaWKYUK_E2pt3H56nRc3Imsps8rB8q904O4X1SZk3Kc5soBNqKk8YL3ShuzmBzaDHwdWf0TlQLIHC5VxweckpF88kXNXxqT_Lc4boDPWqP0jJXV8Qp6V4r2Tw4KoPVSh0K5Af0QKMjFQOyQqEfOwurZiJZloERdN0EWvuy2Rv7-5Es0Smkj6pPWuHkC_RWN3hLAmQ7zCTYx9BmaFYt0YowxTJegCcJ8Y7s4iRcfP1XnhMDy7jhIl_a0O8XFtcjg
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         attachdetach-controller-token-mbwc9
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: attachdetach-controller
+              kubernetes.io/service-account.uid: 74544837-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhdHRhY2hkZXRhY2gtY29udHJvbGxlci10b2tlbi1tYndjOSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJhdHRhY2hkZXRhY2gtY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6Ijc0NTQ0ODM3LTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTphdHRhY2hkZXRhY2gtY29udHJvbGxlciJ9.MMzqeioZBmTBgfrduSMT7o8NKjGkimf0RmXpj61HyQfrX4KxOth1m8YQCRaprV_qx6lYxJARo9fRqqNgkTTwIEKR6mpEoPUicMHeP52CwScpMQnIodpT7GlbgKWWAqvBbrnyn4rf3C4auUt-Ww3hK5FROSHPBA1z0MDlFxS9HObtoI9iB9EYJ0a3yJ1T2caEoQNxtl6h4M18RIXsRHQ7dioqxFo1hfo0Yx2fQdj-Wn71Dx9Hii8VKWsiCqj4iTIfEBIyFA3nf8N_WGphwgYKSGbgTiAzmd4Rpm-KtW2CkK00yh7gPW3-fleo9qZnVEFbqDTsmmFLdkXkqLk35KeIQQ
+
+
+Name:         bootstrap-signer-token-56dmh
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: bootstrap-signer
+              kubernetes.io/service-account.uid: 73d45d4a-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJib290c3RyYXAtc2lnbmVyLXRva2VuLTU2ZG1oIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImJvb3RzdHJhcC1zaWduZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3M2Q0NWQ0YS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Ym9vdHN0cmFwLXNpZ25lciJ9.ac2GLLeDoWjK6V8si-V10ky3xUZCErkU4WN_hTxwUWZ_Q_NnRzIZSUcEh3p-1W4jSzBaqrzTc2Qfw3khaJV2n6DMT8jLnTTkV0Tiv_QixllLsno2ftjpJW4XI5V3W1g1U6_g9BmmrEjyXDgM-3zbzZDa3RW-fLZvoL4p6eW4Nf8SPmKw-clIdEasU_cpMP2oFEdtXr8iTbwvmmnLmcXVBR34UgsA4sg2F0FtNnTPo6KImqf0BsmxNIZtGi0-dC2zfIGqqsRSqkEu2EU9PcaoBhmKJhfWe7_M7G8lalItlvXIdjFJYL3pLD6rJ1CSc-y26hOEvJdNP2dG15dMKNOSxg
+
+
+Name:         bootstrap-token-9l8llq
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  <none>
+
+Type:  bootstrap.kubernetes.io/token
+
+Data
+====
+expiration:                      20 bytes
+token-id:                        6 bytes
+token-secret:                    16 bytes
+usage-bootstrap-authentication:  4 bytes
+usage-bootstrap-signing:         4 bytes
+auth-extra-groups:               47 bytes
+description:                     56 bytes
+
+
+Name:         certificate-controller-token-7v6fc
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: certificate-controller
+              kubernetes.io/service-account.uid: 73ce216b-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjZXJ0aWZpY2F0ZS1jb250cm9sbGVyLXRva2VuLTd2NmZjIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImNlcnRpZmljYXRlLWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3M2NlMjE2Yi0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Y2VydGlmaWNhdGUtY29udHJvbGxlciJ9.1LLHTsQ1DfxjH5kaQl7vbN7BOsLGv8oDJQ_aGaMBi7uPywAGQ3wsQuERir_EH98bIvfayS5SJEfB9kfz4Dm0lGpil_EbN6iDaV9WXz7P-qkoSBH3Jxw5toACYv6yf8aysazUaL9Jz_zu7_bnTu33S4h_240BPFfzdGdLwzq3j4pWdgDplBv3k_jPS9Nao4aNw8ugHET6Bs6rQwD3JejyDThnc92ARd10RaHdO6mmwI5hJ580ZI2nf2oYF0ZrrOwP42TrBNJnfBIoqsNjpar7Q5HxTNCUtp9TeQ8B7x8ZvYLMOmsWgWPvrhvVerflsKbtkJ8BeEsPm2xwk2JS-ulgGg
+
+
+Name:         clusterrole-aggregation-controller-token-9pmpc
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: clusterrole-aggregation-controller
+              kubernetes.io/service-account.uid: 74914f1b-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjbHVzdGVycm9sZS1hZ2dyZWdhdGlvbi1jb250cm9sbGVyLXRva2VuLTlwbXBjIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImNsdXN0ZXJyb2xlLWFnZ3JlZ2F0aW9uLWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NDkxNGYxYi0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Y2x1c3RlcnJvbGUtYWdncmVnYXRpb24tY29udHJvbGxlciJ9.xSTzbhO-d5eLs8UNU6srtH10_YlVjI970o3qK_QigB-Z97B6W8JFh9K7-FUmZRsM_goeRoGiln4JkxLQHQ31e5AO3ttRPWa4_RKDDpBglJFY85o5Q3LhIfJFx76vG1WQb2ncTqBP39AJubuPS79L9V-sZ2SSm64qHRBn2mpkEdjsb4h6M70XBYGSlzrQAUHb9MuAyoyhWTj6JjJRBCoawlCXTzrOOcy6uYA522oMtflhvAH3aoLZZfGd6qZT53EOdqwIb3_zeJZk2HLUSawsvqdmjejSJ5wcUFIDsMq_UlAjIJx0za2Fk0SmN6cUBnjrDxLQPJOXqTUsAuOD3bQI9Q
+
+
+Name:         coredns-token-sd55q
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: coredns
+              kubernetes.io/service-account.uid: 747d256c-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjb3JlZG5zLXRva2VuLXNkNTVxIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImNvcmVkbnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NDdkMjU2Yy0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Y29yZWRucyJ9.OLiW5QpYDbqxbZh1gWp6pmyD93ZVd1LePgXqyM3SRiX1jAX6A8LFm14keiPHv5akq3ygmkqHSyQ7ZAlBfy9uydSnTFYs4QUwIXFJ3s-tU8lsqgKpRwgr4jTXQwQk5016tPEr2UNM17RhuIpN199uZkSOmncdREeEWFpHDn9ZSW4IyOdS8dXNzUiCISIYrhUhnEr5FtmGUrhzpNEGK0dKpgSZq1ve8AET4kzuj8bFxUqUnkD5d6ix7vw_V-Xm4LXGgXRe9dmN_Z3ZNWnugWueeiyZNkfF16iT6BCsrJPooYpo2HMNF8-tZxcYNatn3KwXd2XqmmvCDHIHC1XnWlGAzQ
+ca.crt:     1025 bytes
+
+
+Name:         cronjob-controller-token-7qx99
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: cronjob-controller
+              kubernetes.io/service-account.uid: 7540c92b-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJjcm9uam9iLWNvbnRyb2xsZXItdG9rZW4tN3F4OTkiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiY3JvbmpvYi1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzU0MGM5MmItMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmNyb25qb2ItY29udHJvbGxlciJ9.a9m-1NZgKS2-VltQgpak-MEKgG7SdCCb_aJ5qCJ5w-m8sbM5uNsjfrxuVot246k8JAQrkV2qlhF-PYbyjX6iwZUmxCfjl4JkjyQ-LqMe6oh2D1ZmhuvKSKPMQu4gUl4JgIRTpSjaDSFdPU8TK7qXQzBfJRViWHMn9iPiDs655OO-xD6mDLRhSKNWpJ_3NB0v8IH7FWiD7s9S9q7E7CbNrdieeziZNyFl67CSjga9v9LPZr_yM5XHbBsPf8ekHsdNjDuYwZqsw4yCYmNJNJvXfP_nigkB44kNCbkU1IvNysnQBXkOOWEZXwJvoCnLNwR8kOztUGnKudalhmx0GjKFTQ
+
+
+Name:         daemon-set-controller-token-2fqlg
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: daemon-set-controller
+              kubernetes.io/service-account.uid: 75b33c7d-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkYWVtb24tc2V0LWNvbnRyb2xsZXItdG9rZW4tMmZxbGciLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGFlbW9uLXNldC1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzViMzNjN2QtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRhZW1vbi1zZXQtY29udHJvbGxlciJ9.g1uPAoPVHZBQWd5HAPBhtTRKfIg-MXdr4_ESuduuVOqkx-P-vuyR2gQALGxoEh3oLcR_5sclSHobKySWZ4JjtVnv-w2Rbqgstb4VMzxxF8lyCp98fJRJ1mEpgnRsk8_i3r8wd8xyPE9Ycsi7BkrwvEKw_zlkV8m16fY0gJbqetvJmKznA9HfUsyEjAcdoBhhZHgCPEW2G_hD4pqQlK7KdKX513uqe6Lu5v7jEBpAhjVCAQC_fONUsHdlWFTBn-dBuM2dwCW9q6yTXQ3-hY0MuxD1wxTSnCCMSldjEVEr97M-oK-sWX1ZVlZiHI2NPBbpBTiT20QRgIL8euvVBzk48g
+
+
+Name:         default-token-79kps
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: default
+              kubernetes.io/service-account.uid: 778eaa86-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLTc5a3BzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NzhlYWE4Ni0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZGVmYXVsdCJ9.KTOWaKGQ9HZonbWJk9eyMT6F3glEXW3uwE8KpMCUhT1i_yX8UD4auASR6mec3txo-zks_IM7FJrVu6FugPZAszJTyIBgSDNjj6LBvJAmgkV8sgnKNKbLkQOvwXmw_fNbyeAG7Iof9tTrcHsYMiw7lWJVrND3DcMTiJUDbqFrAejUJkp8-6mNf-GHxwxOPswvdYrpBKt_RQ-5LeC0q00WgOK5Pc-pLocqtvbOuHC2tvaxDHmatrgD3PzZo0JSwatbR1_mBdzxwF53VaN-ga5wupmOEwhaXWiBjM6z-knq2m4ckJvtMEd2juGOangsU7ole7QuVWFI7GXMpY3VD1puLg
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         deployment-controller-token-z67j2
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: deployment-controller
+              kubernetes.io/service-account.uid: 75ff8619-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZXBsb3ltZW50LWNvbnRyb2xsZXItdG9rZW4tejY3ajIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVwbG95bWVudC1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzVmZjg2MTktMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRlcGxveW1lbnQtY29udHJvbGxlciJ9.KMP1dP6uKEmN4YMYwD3FUyo-hgayGTLTrjL4R7RLEzQdoXZs0aOod8TNUgr_wkNsD79-rgIXn-PXkhlB_jpnnrlhp6YS4w-ukk-LPk73QfSTvCaaq-87AJPhxUJSgQM80V-RakglAAElgrot1qO6mxCdeR-wtC5a-SeXJFccwev9yfvvwKVmfNpZWVNb3uXd6DqgJVAbTdQUYSdDjyW_45wM9fQ_trTE7QvbjRYY1QXv8Twa2DTUslXP6IqseugZ5P5I2sjZ-ydWw_BL2gSK40aIfLsurtVwRkRs3T-HrPAN2XVPthm_M3dMnsrWEMy0gIxgXyLe0NfwZptKodVHdg
+
+
+Name:         disruption-controller-token-vg52s
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: disruption-controller
+              kubernetes.io/service-account.uid: 7566ef80-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkaXNydXB0aW9uLWNvbnRyb2xsZXItdG9rZW4tdmc1MnMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGlzcnVwdGlvbi1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzU2NmVmODAtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOmRpc3J1cHRpb24tY29udHJvbGxlciJ9.TVrVyGw_7TeS6eea5UoyRS9wyg_v7MExl0Il5BmRRc1vmKVK1vVhSzs90uR_jtPuP7UjrSqE94Yse6LEisoCI1HdhbE2zJpwdEqnKbt48dJCULsXQTjIi2nLx5m8BHJS7Pz-tgMz7UtnkpWWgA8K5av_GJ5xmoHD0wZNv81sluPDrTfjRogN_Y67VPC4mWyeuUDo0r4Ep3dRbDXeInc_Mi-TByAL1X6lummytax5ngEzjdNdouJGxhHbwzv19reSMd5Tv8p-2fJF8GQlK5R_78E96o1_DZfjJnfkP1yWHmwVZOY0FS7Y8pJLaBP1XzzcH-ubwd6n4zAcwt7k2_yL6w
+
+
+Name:         endpoint-controller-token-f9njq
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: endpoint-controller
+              kubernetes.io/service-account.uid: 76fb50df-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJlbmRwb2ludC1jb250cm9sbGVyLXRva2VuLWY5bmpxIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImVuZHBvaW50LWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NmZiNTBkZi0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZW5kcG9pbnQtY29udHJvbGxlciJ9.1S_SGMNnf_5F8PjCjA0cfn633_9HekUSAwHoVrmMruq-VB4uDBJ3fWoWLnpCaTCku3l6qqIRsI5k_D26YHgwSC183gHJjrt5Rn6lQtNecQDbUNBslVpij9lC1HaXnP9ybe0_hVkqk1FRbojn_ZmD63VjojK89R3Ag-2rm5lU_YhbGnozKI36_B7sXRiDbSoayem7bp7HwtRLM7qMUvDYUzQKPvKCg0hDdFME-AXejU-9bNRJTBCHd0mmLN5-uQ33cec0JsTKXpFoEQSek8Cny55iz9cmGZ4T5UWco0TP8IUxpZwqOcZhbLt2CZDDlWGwxW-ZNhxJgudt0obVuGnkoA
+ca.crt:     1025 bytes
+
+
+Name:         expand-controller-token-rvfdn
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: expand-controller
+              kubernetes.io/service-account.uid: 74f47f67-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJleHBhbmQtY29udHJvbGxlci10b2tlbi1ydmZkbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJleHBhbmQtY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6Ijc0ZjQ3ZjY3LTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpleHBhbmQtY29udHJvbGxlciJ9.mJS0po6u4Ownh_rLAK9YF6LVCPJ9i4PTLAe_3ffqKFIQhHS2K3Pq3I_e6bdecvTgnrFUecfc_69Ajk4ApGa9O4AOD5ZlXRzM59nMusfhS3b-sBYSomBjJLmIfrYrCI-URBq_eCzTEOn1-6hjxMObfPFTMpwcXJSqICg3jYUZZhUIGwwK_Epn_UQFu66oSupXcZCfKafxk_f-w5B1qtSprKqIm9E4158anwMxZjJX3c-KrMI1DTuUrsOSr5gMkc5Xg3ieS0UpqFpOndRpA8LhegzbDaUtE9-eRj9APv_yQNg0MDQ__g3DxqHcW3JC2_jzHZcp4jWlFlaII47ewlNn7Q
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         generic-garbage-collector-token-zm442
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: generic-garbage-collector
+              kubernetes.io/service-account.uid: 76981c5e-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJnZW5lcmljLWdhcmJhZ2UtY29sbGVjdG9yLXRva2VuLXptNDQyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImdlbmVyaWMtZ2FyYmFnZS1jb2xsZWN0b3IiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3Njk4MWM1ZS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06Z2VuZXJpYy1nYXJiYWdlLWNvbGxlY3RvciJ9.yDZOwVYUsjlRIWusqICw7eE99qAJ36-FHqNYOovO2EslKKEeqmgpSH1KgA0KYUTsEnyPFp_pU9qjrSvKGTfamvFNr61NXeMwxm-quvdt1n7jwL2Ls2PijBzOQrxfCCCVeHZBkD4FllQxKhIM0OOMYolk-4X628_VN8hh0ajG1VN7S-UJStFdscrm5cx6HZ5jnG9IWVAgWwF-i-7UnwhhfGLTF-YEroxLHzhOjOClFJ_Pfn-7eU-0CMKKsKG1AqS9f17W2lqihFO14533ul6-W36GbN-9zd0V_LSv-HGNcbfJI2abXQFNjofoyl0Kru85p8hJTckTUtBUs-7WJpaPbw
+
+
+Name:         horizontal-pod-autoscaler-token-n4p8g
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: horizontal-pod-autoscaler
+              kubernetes.io/service-account.uid: 7721738e-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJob3Jpem9udGFsLXBvZC1hdXRvc2NhbGVyLXRva2VuLW40cDhnIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imhvcml6b250YWwtcG9kLWF1dG9zY2FsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NzIxNzM4ZS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06aG9yaXpvbnRhbC1wb2QtYXV0b3NjYWxlciJ9.aaqBFnAXHUs0k7s-LULP4tdUgWV6WKonQXnPhboMckutQehLgmWGiwgMmLbFYW9EfdhGsBo_1k9-QUS3gULRgM4sH2FrZzLYlNv4hQ47pYPAW50ibgbTUFgaw1u-Y6d9rmVLqh3IHGJTxSy-8QKpL2a2q3wVZtPqVx6dL0CB5qKfwClJB6aqQ5nZ2iKZcbmRMI6rdnCKjF9LLpxCNqLuGfjqSrHoISYCma1sMszutc3Ih9MXk9wYpvnGIG59yuwv-BjUOFOGpyywWaDelYVIi-Yjsfpuws3lBdLgrXvDvzfzK1mEfg17tNs-eDoZuPaXkZNgaJGv6a5qiv2H24gJ4Q
+
+
+Name:         job-controller-token-cgkvg
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: job-controller
+              kubernetes.io/service-account.uid: 75d954c3-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJqb2ItY29udHJvbGxlci10b2tlbi1jZ2t2ZyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJqb2ItY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6Ijc1ZDk1NGMzLTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpqb2ItY29udHJvbGxlciJ9.WoZUqVL_TluQjmTedjRTZOEqSlA5B9GsonOH8e8PBaD3T2ukEEQI7g9JJvx-X97w8IZftNG4hnGfLPwvTyVHqvimFM5dnqe21aoHSun8J8LaAo_KfFxERuGGjX4p4HMf7-2gaiJs2kR9FaKYlDKJ-BTpGSNmYY5TkL_gN7junQ961sOLoIbR3awbvP7TA8jCGBe94xeapK6YR2mlbajLqJdzoFGtS_l3y1PqXhIHts6uWVbsmIi4-un59XAjlMVUAxP_2LPEFzz8sYwgUkCemNHKvnwFFA4AKIyu-UMK617242itE0fv3afutLA1RWfeyfPVsTOb6gnJsghSb6IS3w
+
+
+Name:         kube-proxy-token-9qght
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: kube-proxy
+              kubernetes.io/service-account.uid: 74828654-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlLXByb3h5LXRva2VuLTlxZ2h0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imt1YmUtcHJveHkiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NDgyODY1NC0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06a3ViZS1wcm94eSJ9.Je6ijMsdqgTvG9DT2EokFG06YbbRclF4gduHuK62AwYRpkJ_r8FTKhswoWG7NQB4Va2_ls72aVXTY2dzmrU7EfYtJAB8D6vy65kacgl3r4Eg_bJ5NTgxmUTgb3WX3N0ztTvHdbI5CMyQcO1zf4n62Apj8Bg_q17oQ51z2LcCB_X-dFoa1_1Wyf3Rda4VrVkgZjpOzvAHWIz-QJyJHZRkj9-LjDQEx0eED2mEkMF1VA9gmFmOhqkXyDbOlo-JLtJFjKqSeAlFvFP5dSbOVlyLY5Z84Ccarieu_oHjjYLguClbmYLVMPKcNNV5j0MFNkjUTJT7ynJ9hxnTjj19-_5SjQ
+
+
+Name:         kubernetes-dashboard-certs
+Namespace:    kube-system
+Labels:       k8s-app=kubernetes-dashboard
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+
+
+Name:         kubernetes-dashboard-key-holder
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+priv:  1679 bytes
+pub:   459 bytes
+
+
+Name:         kubernetes-dashboard-token-zqdwl
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: kubernetes-dashboard
+              kubernetes.io/service-account.uid: becc9a18-0f43-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJrdWJlcm5ldGVzLWRhc2hib2FyZC10b2tlbi16cWR3bCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJrdWJlcm5ldGVzLWRhc2hib2FyZCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6ImJlY2M5YTE4LTBmNDMtMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTprdWJlcm5ldGVzLWRhc2hib2FyZCJ9.vaQ6DWkExbwj5OIiZDiDuW7PPeI4hdIjX8FyL_fT98oB-NRfrOVmeSN3cBFj1qrrX7gTxoOyp8Oru2szIiZLs2wjbdbCY-4X_dQr26dOvrXZCHWw9wTz3nRUp4JNNa_yOFs5hEP0vUuzHaClSyhG4kRQ9ep1kuBKMYG1LgRUz1H2OTGhXTq6t0eJwfDZvm8mbxHQffYs5O4__lTj1Ur_Kldvg25KiM9_txUDc5b5Vdk2jr0mngK8n-9UUarKywZysIKIEhJEGJoLdaSD8tgi976f-34ilcM8RiINWdeUQI4ordesD8xYG1yLQXrCOEU1FYp0t6wm-0ILTPihn--O5Q
+
+
+Name:         namespace-controller-token-g78b7
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: namespace-controller
+              kubernetes.io/service-account.uid: 73c93762-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJuYW1lc3BhY2UtY29udHJvbGxlci10b2tlbi1nNzhiNyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJuYW1lc3BhY2UtY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjczYzkzNzYyLTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpuYW1lc3BhY2UtY29udHJvbGxlciJ9.pblI-m2ELWklECTVODlcvOD3lVzu6VvJfn_jrsbT1ZcKBfvLXRDNyFh5v1vY4nlwci1KGdHG1pXDH4BItadz6GHMync8686Ug6jrBkja49Wy6SGMqFucCBm9jAcUDg-UgdJtdOm6tVaPIN69DEmJ9i715BL4nOpHEJ_ie1M3x2UWPMx209HPaXICBVB5sUdG0O5uaTkbprLLI0WX8hj4fpDh1UB_9pwr21ZQ38RGDxkSDE9sofyMOOuISwtuMDCUaywfM-jwtdAB9izKKb1Rm6oLdBHfj12jSr51pMDSXB2rUUM449E8-TFZpHqvGAElAt0ffeNyozWASetoeq0NOg
+
+
+Name:         node-controller-token-nxrgw
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: node-controller
+              kubernetes.io/service-account.uid: 758d1888-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJub2RlLWNvbnRyb2xsZXItdG9rZW4tbnhyZ3ciLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoibm9kZS1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzU4ZDE4ODgtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOm5vZGUtY29udHJvbGxlciJ9.mRfcFEVXDhhMkxvjQ-C5O0rj5uT4LJJEKjK6PXSQPi_nRc6msEjtFHuyd9anQylEvS522-OTTv0suBC9ILbh4zY7u36ZUY17FCins2XVvW_ilozz4lHg5QDwkBy_vbn9OfuLrfPU16besMOqdrmMzHRZo2AzbjlgdAZfNlEz5l2qS9kIx4Z9a50z95nf5H8X2ZTmkgg9xPznypHQpJUQf9Pg1UXrDi0hjlQal2lOFzLAN8VoN9sVWWaKNGEj9ZoxmgGAqYxegCQws1tRBtnm3cs9JtAZu77j0GjRDem2h4vwzfjWWxYm_W78QNstNn0w0OxaLCMzS00aXcIa36GKpg
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         persistent-volume-binder-token-cjwwt
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: persistent-volume-binder
+              kubernetes.io/service-account.uid: 7625ab40-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJwZXJzaXN0ZW50LXZvbHVtZS1iaW5kZXItdG9rZW4tY2p3d3QiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicGVyc2lzdGVudC12b2x1bWUtYmluZGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzYyNWFiNDAtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnBlcnNpc3RlbnQtdm9sdW1lLWJpbmRlciJ9.iUegaw-HFsIt6BJ-wI8cEq3Br03zxS17DvIVqZ1903SemjiS6grdiS0PRmMk9PB6aC-ywYS9K_U_SqTaqXiC6TXkiABH8BpiNdPqhbmf1oSHwjACFaS1lOy6t2LMtnBwGhQylKxAXuk70hAazIhKB2I1i2EHU8WashLBFAUbwWsO-GeEUr3Q_lQ-LH3iJ6QN7Nd6bTMBMLXoWI5v4xy4ri172OERr69-9_UVP-Ys1hKaJYdEtw0ePPuU4RlSZj1AFOlU-2_kaoE5LcebX9rEdU70BH4_GDjGGKkpPHBjIY4B8SeDAfd-jSCtF64TdUkmfa9bLTVsxdduBp78DkgMoQ
+
+
+Name:         pod-garbage-collector-token-6rq8l
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: pod-garbage-collector
+              kubernetes.io/service-account.uid: 74174103-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJwb2QtZ2FyYmFnZS1jb2xsZWN0b3ItdG9rZW4tNnJxOGwiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicG9kLWdhcmJhZ2UtY29sbGVjdG9yIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzQxNzQxMDMtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnBvZC1nYXJiYWdlLWNvbGxlY3RvciJ9.Qvf-FLdHZNedjEli3JGspiiKTA3azXdGLt0EbS6JwbpgeKgtDAyNxqdtpIfH44yTfg5z7vWFL-YWeD_IlhTmw8PkV2swiIVArBusZB-Oc3lebSPHkOpZppK3BB5JQBM6_0PgnN0HbaTRNlJe3H1Pir2uix8Su7eYsl_39_8gtRClVmQI0Un3F7iSzPizrGWloMUDImebp6HzBH6Bf-cI6TSaMKJtGaYERuoV_R4sVnQX-UuM0gzCdHs9aY1laSlG7Xto2rlIq9tF-J9O6mTRB7gy7gwH9dloG6jabADTclw3fUviLs8jz9pbGOXVQ-vtHhP99NVDAJC3h9Nzcguxew
+
+
+Name:         pv-protection-controller-token-b5wwb
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: pv-protection-controller
+              kubernetes.io/service-account.uid: 764bd243-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJwdi1wcm90ZWN0aW9uLWNvbnRyb2xsZXItdG9rZW4tYjV3d2IiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicHYtcHJvdGVjdGlvbi1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzY0YmQyNDMtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnB2LXByb3RlY3Rpb24tY29udHJvbGxlciJ9.QVMz_LNZE3mBFF-zXjofC6x2IlgEpP0Hd4WSV2rNZGb5e9N6GDE7lyzwaCc_Yaayg3NpueQg8dugO89yGjmrzNzeiaaRxVakVUt852tC69RR-nTvnZfYjPKCUPOkl4gUc6eEBSLJG4Gl6iOW8t8JdbsLOfryRe-hQ7n4C5kRaVWANJzivbQq60chhmH37JLjJao2b78LzNsw9TzraHeL4bIPrAIWaDr7B-zDUImdjV_FCNxmeUkF7AuSl0LogMfIy3ZHTadViWXejy6ErlNbkKQG_Ej063m-6R1L2xnB0XpWe9K6W9q4yEY9vAmgj-CMmCUFpbXNJJymQdi02Cn-pg
+
+
+Name:         pvc-protection-controller-token-pdb6j
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: pvc-protection-controller
+              kubernetes.io/service-account.uid: 73f11b67-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJwdmMtcHJvdGVjdGlvbi1jb250cm9sbGVyLXRva2VuLXBkYjZqIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InB2Yy1wcm90ZWN0aW9uLWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3M2YxMWI2Ny0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06cHZjLXByb3RlY3Rpb24tY29udHJvbGxlciJ9.YRj3kq8Fve4uD7PJlCRlN-jcTee2NFkvETHhdTk9wE7_l48Zf9tyuyfodEGrKizHacuXuektjLKNA_v2A-y3UbTuNllnhdl1K9wHMdn3jjnwmuziKsA9uJysFGuZwU00S3v9dYro0gqvRR_NDMQbCfYREqTR1uwE4fhMPPFFVoJWU06VebYAOwznYyTME-B4HqLtUcSOHoGX-8c0HzSvv7tBbr0r4ExlElkDt38I7jLtO01Bl1IR5Ta8-MmNBv9NtMk3OLed95RIG2nYzmNpjhwXqTl8QWFXSwrXBT7V-H4nkiBRB0bNMugr0BP0jAYfgL6vAs0mi6LE9kSQymrfqA
+
+
+Name:         replicaset-controller-token-k5rzc
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: replicaset-controller
+              kubernetes.io/service-account.uid: 73b52b2c-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyZXBsaWNhc2V0LWNvbnRyb2xsZXItdG9rZW4tazVyemMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicmVwbGljYXNldC1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzNiNTJiMmMtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnJlcGxpY2FzZXQtY29udHJvbGxlciJ9.ujulSzBrpY4Ye6a_Xbxup10P0rOmV9-vvXp1oVkMd-2_z994Rhg4Sj8da0pEb_HK7Lw2jBENE-TGqDVgO6UDnvSGeTUucU5V7YVqjT7V8VCpalv2BoP3RwW7oRon5w1Yem-ogMWPnqI0k7mAGLTZBAVnwB15kKYtaqE0hfObVWhLtHbPzy_wA1QU7u1LnfeAdMCuc3mdo6rhXHzfpZQUDpPd8De_oGY2Bytb166q6oE946yhIlCV3aoHJYBVzyNMxScQYQgUA-UgvYeRyW924K4J_wxzyxOxJMBPWeq9yAYMBhlrA45KGysrbJfIwJu0NEGTYd7BHDn7Idq6eg1Tmw
+
+
+Name:         replication-controller-token-nw5fn
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: replication-controller
+              kubernetes.io/service-account.uid: 74b777de-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyZXBsaWNhdGlvbi1jb250cm9sbGVyLXRva2VuLW53NWZuIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InJlcGxpY2F0aW9uLWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NGI3NzdkZS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06cmVwbGljYXRpb24tY29udHJvbGxlciJ9.kF83uLGVrtUgmNyHLOouDioNvLc9FT1Aa1uC_4M0AaKRIfewscS23LQhPcM2I4mcKR7-cCcYNwkxPBHFL3CdSw3IIOa8iTv1rgj1hRpgEGhhaOC1jyVyOT5OPKG5KDHQKBpr_44Lir3w5R2p6bh5-hFzA3keysePeSXTKiMR4YKsy7c5jWV8zVeJfoOM1hXjcG50fLOvcI9tcj2IMPN9_JQcVpk3O-Va93ZZyAAvij6klXkC1_TsU5b4isnDZGW2B7NRr9e2Px_SDL8EMUV-RLvIhqedi3CgcG3E5sbsKDCNYKOK4f6H1LxGfslc7CZ2Sr8QnzGjfXC_byS_dTLX6A
+
+
+Name:         resourcequota-controller-token-z47xs
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: resourcequota-controller
+              kubernetes.io/service-account.uid: 7671f71c-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyZXNvdXJjZXF1b3RhLWNvbnRyb2xsZXItdG9rZW4tejQ3eHMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoicmVzb3VyY2VxdW90YS1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzY3MWY3MWMtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnJlc291cmNlcXVvdGEtY29udHJvbGxlciJ9.l7gppJPqTauqLBuX-D8nEGIhILrLloJm-utcGAaJz9nGE17zthbLAHLjlndTeYGZ2JvHb_ITsdXEHTvlJI0TfkamQ3gS0DXR6OueUznjSuFY7aDwLYnDs695WU8DdKH-jSkV30vEf5uVHFY904WPi8oN7BDRwVVfLa3ArjbRr-l_smPwVCfpAkn933NFMcrj1gTWQgPY6dNRaFCnDRAJEEjAUSm5AU9JP1RspZ081DDQp1A3NyJQj-au5kGLma6f2VZVaJIIb3gr3DRQsmH6tQDzQCfH6PnhVMAzMTIsnMMlYaWGh_tXXRPKy1Qlq0FLfnM70yhEUbww7QPT385MKw
+
+
+Name:         service-account-controller-token-qr6c7
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: service-account-controller
+              kubernetes.io/service-account.uid: 751aa80f-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtY29udHJvbGxlci10b2tlbi1xcjZjNyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6Ijc1MWFhODBmLTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpzZXJ2aWNlLWFjY291bnQtY29udHJvbGxlciJ9.Z-0eGWvTc0YK41ZF5vERWwVjcKWZRTvFeThAVea69UwtSaMfXgudSYIplmJmYPCDqP95v-0AeG8q3-LD1OBjvPot5eLVsEiza1-gTicnSG94AlmDO0syAmJtF8eJqWPrLJnFVZUGX4ncPKPQ2qFfdzPYlkNi-xjWOsAaam9YOeMyKIFUjhODzpH23JCoMgKUt8kxZbrmZymM2l2tSJmf8BgvPCOKnJmY32BzSi3VR_NeQrsQMFIVdv_uzs8zFHtrkqrrKuoO1s1Qam26gAjsKQpJ7eZMrwyxtL1NsU3YkZ3x91PTgGzUk1fxuQz0JMRg_yNk9Hp2MBUz5SfhJYWXUw
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         service-controller-token-lhgzw
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: service-controller
+              kubernetes.io/service-account.uid: 73c6733d-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJzZXJ2aWNlLWNvbnRyb2xsZXItdG9rZW4tbGhnenciLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoic2VydmljZS1jb250cm9sbGVyIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiNzNjNjczM2QtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOnNlcnZpY2UtY29udHJvbGxlciJ9.0XvwQaE_9ESo8Fuxp8ZmSIcMCLald0beIXwaIOeGxda0vAOx1D0RX-4yVPAIa-LLH9ZuBpM4gJQ5xNWt6XWzoxEUW_6jRr7XltQRX25aQ0OtVJdOl_xrBskhogOjZtY6texiGJqJw3sLR3AWCbvb2lcrcSWuH2jTNEclzGJIDjLulIiX-24zDuxHoUnY52jYzHN4FBNtKo-Jz_jYnQ4081739h3GtNAH8jAmwDYWlTZpZm_MtEZaHUF4hu48TE2wooUsWwzZd-xc8KKjbk-uGDBBl1-9gxZ-qSwiCuo1naCXZYA4sXbexTrD0GdZogEXJsvuOZkkAwR5FP2zjrw2uw
+
+
+Name:         statefulset-controller-token-6rqr8
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: statefulset-controller
+              kubernetes.io/service-account.uid: 76d527ea-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJzdGF0ZWZ1bHNldC1jb250cm9sbGVyLXRva2VuLTZycXI4Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InN0YXRlZnVsc2V0LWNvbnRyb2xsZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3NmQ1MjdlYS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06c3RhdGVmdWxzZXQtY29udHJvbGxlciJ9.YrkkscNTaG4BD8F5d8NkZvHKK2s_UTqOOOZrB154HCUr-48LFYfniYjF9kJEv_wFvvkXctoys-YKEjrdITDu1kg3WLcFWEwCWELaQJM5tAAWgI2g4LGESY8xMCz66ZMw04h6H0kVB0SvCrubpSmb1X_HjK_S7u3VJO0CwOSFfayEwWKFi_2i8-Xdj2TMR68At09GmmLGctR31N0iBchKaUinT7RyJhFEcUo4gvlTKelONgE-sr-FynfmJlppJ21HRvzlJftXmQWXiRTbHFrgCbCVIiGweHbKrQFnzw2D5hOTgA6Zx9dScpvIPyXba_h7Fu8t-9IwxVlzdr-MZrokVg
+ca.crt:     1025 bytes
+namespace:  11 bytes
+
+
+Name:         token-cleaner-token-n772c
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: token-cleaner
+              kubernetes.io/service-account.uid: 73db5f49-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJ0b2tlbi1jbGVhbmVyLXRva2VuLW43NzJjIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6InRva2VuLWNsZWFuZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI3M2RiNWY0OS0wZjQyLTExZTktOTUxMC0xMjg1OTFhMzM0ZjgiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06dG9rZW4tY2xlYW5lciJ9.nr5ACWKS26rqtVsxk6HfHC0stFEr7EVDHb9G_uAcTVCFAII-6_vETRnq3Zep4XOkh6Rf4fDoNDZmXd5UIT31VGN46jF4MhnX51JxAB8t48allog63ncw-AMNAQ6XoYThOEYx0j_OcHTk_89t-KF3Kwh1P0o7jvRiDuBEn3ayNDn2YgO-0aep38o_HBIMjXTFDwj3w1HedFj8v3RDIxfG2iZC3DfM_410K_C70xk9lkD6GoJVVXGGrjeDJvOyFjQzCPxUisy9u-28eZ02xKWGkqq8BEPQt2DVtUa715wRkS3hfQ9jh1A2h_IoS-DN2sr8Vx9rDUNBnOpxzK7Fkp-d1g
+
+
+Name:         ttl-controller-token-xbw6w
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: ttl-controller
+              kubernetes.io/service-account.uid: 73d10244-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJ0dGwtY29udHJvbGxlci10b2tlbi14Ync2dyIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJ0dGwtY29udHJvbGxlciIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjczZDEwMjQ0LTBmNDItMTFlOS05NTEwLTEyODU5MWEzMzRmOCIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTp0dGwtY29udHJvbGxlciJ9.ot4kdOakIbTyyIc427O_7wGO8fi1Ec-kITkIIPVEmgLbUndV8bIrb6X-T85fq5jHqzUlL_IOWMbc0K3ubgWrV0-vRMbjM5Q3roochkE_RYoDxmsfXi7RLmdo3k6K0JSkMXNDDTJEZMf6127EJBB5FxxHbakBQcuqy_xMQXvUVHoiZdC25J-XsczG-014V17ZbkiF-UQBYF8uM5inScbddY4MnSntQIgXfV3d1Nl5SU9WzEukgcDkIWncv-rUjbtnXIqrj0taWp8EQkZn4x7eAmcrpnOyTDgwC7gk6AYRtP1eKsyyhuEyQPNMB7hzejLZ35q7ZPZ1eAixBLEskZ3gxg
+
+
+Name:         weave-net-token-dtb2q
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: weave-net
+              kubernetes.io/service-account.uid: a41b84fe-0f42-11e9-9510-128591a334f8
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+ca.crt:     1025 bytes
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJ3ZWF2ZS1uZXQtdG9rZW4tZHRiMnEiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoid2VhdmUtbmV0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQudWlkIjoiYTQxYjg0ZmUtMGY0Mi0xMWU5LTk1MTAtMTI4NTkxYTMzNGY4Iiwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50Omt1YmUtc3lzdGVtOndlYXZlLW5ldCJ9.QNIZYB0Jh9jwVUtx0DbagbOGae8HPEJo5ZlELYi61-vGfmY8qfl1RQ0sGN0UuluSW3pQgdyX77kSCveq9gXacToghzUxjqVjvYifTAx-a8sRFybkXfZRr2zWdQ6emUxWKrhW9k9TnramXxZuQ6B1LYcdM3fJe1OiZ8xhhN7alPkWnuufUsSxNuOMX7qEa3nWokBOtUarHdAuD5t20tCj1RDUPZLNoUcha90SXltk4YxJpPkLwCxtK86ZjLp7hRKnqqZFbFROqkFs5sd3LE_nSYtFB8puoOua3X0bZxjwTduqSzcXxLrYeCOX0Ou5bY9te8sR-CVonnBP429XIuYUuA
+root@ip-172-31-91-246:~#
+root@ip-172-31-91-246:~#
+root@ip-172-31-91-246:~# top
+top - 11:30:09 up  1:03,  4 users,  load average: 0.13, 0.11, 0.09
+Tasks: 166 total,   1 running, 128 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.6 us,  1.2 sy,  0.0 ni, 95.9 id,  0.0 wa,  0.0 hi,  0.2 si,  0.2 st
+KiB Mem :  4038192 total,  1042512 free,   748156 used,  2247524 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  3025356 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 5099 root      20   0 1353696  93000  56096 S   3.0  2.3   1:35.91 kubelet
+ 5481 root      20   0  205268 105208  53804 S   2.3  2.6   1:16.78 kube-controller
+ 5571 root      20   0  447640 288780  63248 S   2.3  7.2   1:26.09 kube-apiserver
+ 4045 root      20   0 1272444  89676  37624 S   1.3  2.2   0:48.89 dockerd
+ 5521 root      20   0 10.060g  51264  16180 S   1.0  1.3   0:40.80 etcd
+ 5620 root      20   0  139552  35336  25908 S   1.0  0.9   0:29.51 kube-scheduler
+ 4063 root      20   0 1290120  38408  22040 S   0.3  1.0   0:11.83 docker-containe
+    1 root      20   0  159864   9264   6792 S   0.0  0.2   0:03.69 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/0:0H
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.31 ksoftirqd/0
+    8 root      20   0       0      0      0 I   0.0  0.0   0:01.56 rcu_sched
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 migration/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/0
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/1
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/1
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.24 ksoftirqd/1
+   17 root      20   0       0      0      0 I   0.0  0.0   0:00.13 kworker/1:0
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/1:0H
+   19 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   20 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 netns
+   21 root      20   0       0      0      0 S   0.0  0.0   0:00.00 rcu_tasks_kthre
+   22 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kauditd
+root@ip-172-31-91-246:~# vi service.yml
+root@ip-172-31-91-246:~# kubctl create -f service.yml
+
+Command 'kubctl' not found, did you mean:
+
+  command 'kubectl' from snap kubectl (1.13.1)
+
+See 'snap info <snapname>' for additional versions.
+
+root@ip-172-31-91-246:~# kubectl create -f service.yml
+clusterrolebinding.rbac.authorization.k8s.io/admin created
+root@ip-172-31-91-246:~# top
+top - 11:34:44 up  1:08,  4 users,  load average: 0.03, 0.06, 0.08
+Tasks: 166 total,   1 running, 128 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  1.0 us,  0.9 sy,  0.0 ni, 97.6 id,  0.2 wa,  0.0 hi,  0.0 si,  0.3 st
+KiB Mem :  4038192 total,  1040756 free,   748180 used,  2249256 buff/cache
+KiB Swap:        0 total,        0 free,        0 used.  3025284 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
+ 5099 root      20   0 1353696  92872  56096 S   2.7  2.3   1:43.17 kubelet
+ 5481 root      20   0  205268 105448  53804 S   1.7  2.6   1:22.53 kube-controller
+ 5571 root      20   0  447640 287068  63248 S   1.3  7.1   1:31.92 kube-apiserver
+ 4045 root      20   0 1272444  89676  37624 S   1.0  2.2   0:51.74 dockerd
+ 5521 root      20   0 10.060g  51976  16180 S   0.7  1.3   0:43.81 etcd
+ 5620 root      20   0  139552  35312  25908 S   0.7  0.9   0:31.67 kube-scheduler
+ 1607 root      20   0   44552   3992   3404 R   0.3  0.1   0:00.40 top
+ 5903 root      20   0  137148  30176  23324 S   0.3  0.7   0:08.09 kube-proxy
+ 7670 root      20   0  141984  31256  24860 S   0.3  0.8   0:07.22 coredns
+    1 root      20   0  159864   9264   6792 S   0.0  0.2   0:03.69 systemd
+    2 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kthreadd
+    4 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/0:0H
+    6 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 mm_percpu_wq
+    7 root      20   0       0      0      0 S   0.0  0.0   0:00.32 ksoftirqd/0
+    8 root      20   0       0      0      0 I   0.0  0.0   0:01.66 rcu_sched
+    9 root      20   0       0      0      0 I   0.0  0.0   0:00.00 rcu_bh
+   10 root      rt   0       0      0      0 S   0.0  0.0   0:00.01 migration/0
+   11 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/0
+   12 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/0
+   13 root      20   0       0      0      0 S   0.0  0.0   0:00.00 cpuhp/1
+   14 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 watchdog/1
+   15 root      rt   0       0      0      0 S   0.0  0.0   0:00.00 migration/1
+   16 root      20   0       0      0      0 S   0.0  0.0   0:00.26 ksoftirqd/1
+   17 root      20   0       0      0      0 I   0.0  0.0   0:00.14 kworker/1:0
+   18 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 kworker/1:0H
+   19 root      20   0       0      0      0 S   0.0  0.0   0:00.00 kdevtmpfs
+   20 root       0 -20       0      0      0 I   0.0  0.0   0:00.00 netns
+─────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Server unexpectedly closed network connection
+
