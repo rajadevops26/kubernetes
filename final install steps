@@ -1,0 +1,156 @@
+************************  INSTALL STEPS IN UBUNTU *********************************
+PRE REQUASITES FOR INSTALL
+1: IN AWS MINIMUM 4GB RAM IS REQUARIED WITH 2 CPUS
+************************************************************************************
+
+
+
+                  **********************************************************************
+                  COMMON STEPS FOR INSTALL KUBERNETES IN WORKSTATION AND CLIENT MACHINES
+                  ***********************************************************************
+sudo -i
+apt-get update
+apt-get update && sudo apt-get install -y apt-transport-https
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+apt-get update
+apt-get install -y docker.io
+apt-get install -y kubelet kubeadm kubectl kubernetes-cni
+*******************************************************************************************
+
+                     RUNNING IN WORKSTATION
+                     **********************
+kubeadm init ______________________>>>>>> IT GIVES TOKEN FOR ADDING CLIENTSFOR KUBERNETES
+
+***************
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 172.31.83.219:6443 --token vr9nmz.yucbbaxfcg0kl4ir --discovery-token-ca-cert-hash sha256:5eabb5c8930e7180e7a17d4a15618827fca089d49c26b15be81f4665e77cd93c
+********************
+mkdir -p $HOME/.kube
+cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl apply -f https://git.io/weave-kube-1.6
+kubectl get nodes
+kubectl get pods --all-namespaces
+kubectl cluster-info
+kubectl --help
+****************************************************************************************************
+                                       DASHBOARD CREATION
+                                       ******************
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+kubectl get svc --all-namespaces
+kubectl -n kube-system edit svc kubernetes-dashboard
+***********************************************
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-01-03T10:38:45Z"
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kube-system
+  resourceVersion: "1247"
+  selfLink: /api/v1/namespaces/kube-system/services/kubernetes-dashboard
+  uid: bed5b09f-0f43-11e9-9510-128591a334f8
+spec:
+  clusterIP: 10.103.195.121
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31618
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    k8s-app: kubernetes-dashboard
+  sessionAffinity: None
+  type: ClusterIP------------------------------------------------->>>>>>>>>>>>>>>change it
+status:
+  loadBalancer: {}
+________________________________________________________________________
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2019-01-03T10:38:45Z"
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kube-system
+  resourceVersion: "1247"
+  selfLink: /api/v1/namespaces/kube-system/services/kubernetes-dashboard
+  uid: bed5b09f-0f43-11e9-9510-128591a334f8
+spec:
+  clusterIP: 10.103.195.121
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31618
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    k8s-app: kubernetes-dashboard
+  sessionAffinity: None
+  type: NodePort  --------------------------------------->>>>>>>>>>>>>>>>>>> to access through nodeport
+status:
+  loadBalancer: {}
+**************************************************************************************
+cd /etc/kubernetes/manifests/
+ls
+vi raja.yml
+***********
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: rajendra-admin
+  namespace: kube-system
+****************
+kubectl create -f raja.yml
+cd
+kubectl create deployment nginx --image=nginx
+kubectl run test --port 80 --image nginx --replicas=5
+kubectl create service nodeport nginx --tcp=80:80
+docker ps
+kubectl get svc --all-namespaces
+********************************************************************************************
+root@ip-172-31-91-246:/etc/kubernetes/manifests# kubectl get svc --all-namespaces
+NAMESPACE     NAME                   TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       kubernetes             ClusterIP   10.96.0.1        <none>        443/TCP         48m
+default       nginx                  NodePort    10.99.204.253    <none>        80:32513/TCP    24m
+kube-system   kube-dns               ClusterIP   10.96.0.10       <none>        53/UDP,53/TCP   48m
+kube-system   kubernetes-dashboard   NodePort    10.103.195.121   <none>        443:31618/TCP   38m
+**********************************************************************************************
+                                     DASHBOARD RUNNING IN mozilla
+                                     ****************************
+https://3.83.137.199:31618------------------MASTER PUBLIC IP AND PORT OF KUBERNETES-DASHBOARD NEED TO ENABLE
+ADVANCE
+ADD EXTENSION
+THEN CHECKOUT WHAT HAPPENS
+*********************************************
+ERROR:
+DASHBOARD RUNNING IN GOOGLE CROME
+3.83.137.199 normally uses encryption to protect your information. When Google Chrome tried to connect to 3.83.137.199 this time, the website sent back unusual and incorrect credentials. This may happen when an attacker is trying to pretend to be 3.83.137.199, or a Wi-Fi sign-in screen has interrupted the connection. Your information is still secure because Google Chrome stopped the connection before any data was exchanged.
+
+You cannot visit 3.83.137.199 right now because the website sent scrambled credentials that Google Chrome cannot process. Network errors and attacks are usually temporary, so this page will probably work later.
+
+
