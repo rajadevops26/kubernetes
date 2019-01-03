@@ -23,3 +23,6 @@ US East (N. Virginia) COST
 
 - and enable ports 6443 and 443 on aws security groups
 - if u want ping agent enable allipv4traffic
+[access control](https://github.com/kubernetes/dashboard/wiki/Creating-sample-user)
+[dashboard](https://github.com/kubernetes/dashboard)
+kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
