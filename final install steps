@@ -152,5 +152,30 @@ DASHBOARD RUNNING IN GOOGLE CROME
 3.83.137.199 normally uses encryption to protect your information. When Google Chrome tried to connect to 3.83.137.199 this time, the website sent back unusual and incorrect credentials. This may happen when an attacker is trying to pretend to be 3.83.137.199, or a Wi-Fi sign-in screen has interrupted the connection. Your information is still secure because Google Chrome stopped the connection before any data was exchanged.
 
 You cannot visit 3.83.137.199 right now because the website sent scrambled credentials that Google Chrome cannot process. Network errors and attacks are usually temporary, so this page will probably work later.
+********************************************************************************************
+To generate token
+******************
+kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep rajendra-admin | awk '{print $1}')
+
+To see all sertvices on dashboard create cluster role binding
+*************************************************************
+vi service.yml
+***************
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: rajendra-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: rajendra-admin
+  namespace: kube-system
+*********************
+kubectl create -f raja.yml
+***************************************
+clusterrolebinding.rbac.authorization.k8s.io/admin created
 
 
