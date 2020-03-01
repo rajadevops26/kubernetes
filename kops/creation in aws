@@ -1,0 +1,482 @@
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@34.201.134.76                              │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-1057-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Mar  1 07:50:37 UTC 2020
+
+  System load:  0.0               Processes:           87
+  Usage of /:   17.5% of 7.69GB   Users logged in:     0
+  Memory usage: 20%               IP address for eth0: 172.31.87.150
+  Swap usage:   0%
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Sun Mar  1 05:39:16 2020 from 183.83.173.87
+ubuntu@ip-172-31-87-150:~$ sudo -i
+root@ip-172-31-87-150:~# ls
+awscli-bundle  awscli-bundle.zip  snap
+root@ip-172-31-87-150:~# cd /usr/local/bin/
+root@ip-172-31-87-150:/usr/local/bin# ls
+aws  kops  kubectl
+root@ip-172-31-87-150:/usr/local/bin# clear
+root@ip-172-31-87-150:/usr/local/bin# cd
+root@ip-172-31-87-150:~# kops create cluster --yes --state=s3://demo.k8s.valaxy --cloud=aws --zones=us-east-1  --node-count=2 --node-size=t2.micro --master-size=t2.micro --name=test.k8s.local
+
+error populating configuration: Region is not a recognized EC2 region: "us-east-" (check you have specified valid zones?)
+root@ip-172-31-87-150:~# kops create cluster --yes --state=s3://demo.k8s.valaxy --cloud=aws --zones=us-east-1d  --node-count=2 --node-size=t2.micro --master-size=t2.micro --name=test.k8s.local
+I0301 07:58:12.719258    2867 subnets.go:184] Assigned CIDR 172.20.32.0/19 to subnet us-east-1d
+I0301 07:58:13.006864    2867 create_cluster.go:1568] Using SSH public key: /root/.ssh/id_rsa.pub
+I0301 07:58:13.481205    2867 apply_cluster.go:556] Gossip DNS: skipping DNS validation
+I0301 07:58:13.777718    2867 executor.go:103] Tasks: 0 done / 92 total; 44 can run
+I0301 07:58:14.697740    2867 vfs_castore.go:729] Issuing new certificate: "etcd-clients-ca"
+I0301 07:58:15.288698    2867 vfs_castore.go:729] Issuing new certificate: "etcd-manager-ca-events"
+I0301 07:58:15.334534    2867 vfs_castore.go:729] Issuing new certificate: "ca"
+I0301 07:58:15.739158    2867 vfs_castore.go:729] Issuing new certificate: "etcd-peers-ca-events"
+I0301 07:58:15.807751    2867 vfs_castore.go:729] Issuing new certificate: "etcd-manager-ca-main"
+I0301 07:58:15.817814    2867 vfs_castore.go:729] Issuing new certificate: "apiserver-aggregator-ca"
+I0301 07:58:16.278107    2867 vfs_castore.go:729] Issuing new certificate: "etcd-peers-ca-main"
+I0301 07:58:16.591182    2867 executor.go:103] Tasks: 44 done / 92 total; 24 can run
+I0301 07:58:17.550288    2867 vfs_castore.go:729] Issuing new certificate: "kube-controller-manager"
+I0301 07:58:18.347539    2867 vfs_castore.go:729] Issuing new certificate: "kops"
+I0301 07:58:18.524666    2867 vfs_castore.go:729] Issuing new certificate: "kubelet-api"
+I0301 07:58:19.004653    2867 vfs_castore.go:729] Issuing new certificate: "apiserver-proxy-client"
+I0301 07:58:19.072112    2867 vfs_castore.go:729] Issuing new certificate: "kubelet"
+I0301 07:58:19.106850    2867 vfs_castore.go:729] Issuing new certificate: "kube-proxy"
+I0301 07:58:19.267798    2867 vfs_castore.go:729] Issuing new certificate: "apiserver-aggregator"
+I0301 07:58:19.620323    2867 vfs_castore.go:729] Issuing new certificate: "kube-scheduler"
+I0301 07:58:20.128889    2867 vfs_castore.go:729] Issuing new certificate: "kubecfg"
+I0301 07:58:20.317833    2867 executor.go:103] Tasks: 68 done / 92 total; 20 can run
+I0301 07:58:20.527828    2867 launchconfiguration.go:375] waiting for IAM instance profile "nodes.test.k8s.local" to be ready
+I0301 07:58:30.840338    2867 executor.go:103] Tasks: 88 done / 92 total; 3 can run
+I0301 07:58:31.398041    2867 vfs_castore.go:729] Issuing new certificate: "master"
+I0301 07:58:31.697923    2867 executor.go:103] Tasks: 91 done / 92 total; 1 can run
+W0301 07:58:31.911060    2867 executor.go:128] error running task "LoadBalancerAttachment/api-master-us-east-1d" (9m59s remaining to succeed): error attaching autoscaling group to ELB: ValidationError: Provided Load Balancers may not be valid. Please ensure they exist and try again.
+        status code: 400, request id: 4b6c346e-993d-48a1-80a5-8b60a3ffd28c
+I0301 07:58:31.911434    2867 executor.go:143] No progress made, sleeping before retrying 1 failed task(s)
+I0301 07:58:41.911751    2867 executor.go:103] Tasks: 91 done / 92 total; 1 can run
+I0301 07:58:42.162259    2867 executor.go:103] Tasks: 92 done / 92 total; 0 can run
+I0301 07:58:42.247595    2867 update_cluster.go:305] Exporting kubecfg for cluster
+kops has set your kubectl context to test.k8s.local
+
+Cluster is starting.  It should be ready in a few minutes.
+
+Suggestions:
+ * validate cluster: kops validate cluster
+ * list nodes: kubectl get nodes --show-labels
+ * ssh to the master: ssh -i ~/.ssh/id_rsa admin@api.test.k8s.local
+ * the admin user is specific to Debian. If not using Debian please use the appropriate user based on your OS.
+ * read about installing addons at: https://github.com/kubernetes/kops/blob/master/docs/operations/addons.md.
+
+root@ip-172-31-87-150:~# kops validate cluster
+Using cluster from kubectl context: test.k8s.local
+
+
+State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://github.com/kubernetes/kops/blob/master/docs/state.md.
+root@ip-172-31-87-150:~# export KOPS_STATE_STORE=s3://demo.k8s.valaxy
+root@ip-172-31-87-150:~# kops validate cluster
+Using cluster from kubectl context: test.k8s.local
+
+Validating cluster test.k8s.local
+
+
+unexpected error during validation: error listing nodes: Get https://api-test-k8s-local-7afed8-215238976.us-east-1.elb.amazonaws.com/api/v1/nodes: EOF
+root@ip-172-31-87-150:~# kops validate cluster
+Using cluster from kubectl context: test.k8s.local
+
+Validating cluster test.k8s.local
+
+
+unexpected error during validation: error listing nodes: Get https://api-test-k8s-local-7afed8-215238976.us-east-1.elb.amazonaws.com/api/v1/nodes: EOF
+root@ip-172-31-87-150:~# kops validate cluster
+Using cluster from kubectl context: test.k8s.local
+
+Validating cluster test.k8s.local
+
+INSTANCE GROUPS
+NAME                    ROLE    MACHINETYPE     MIN     MAX     SUBNETS
+master-us-east-1d       Master  t2.micro        1       1       us-east-1d
+nodes                   Node    t2.micro        2       2       us-east-1d
+
+NODE STATUS
+NAME                            ROLE    READY
+ip-172-20-35-68.ec2.internal    master  True
+ip-172-20-53-229.ec2.internal   node    True
+
+Your cluster test.k8s.local is ready
+root@ip-172-31-87-150:~# kubectl get nodes
+NAME                            STATUS   ROLES    AGE   VERSION
+ip-172-20-35-68.ec2.internal    Ready    master   12m   v1.16.7
+ip-172-20-53-229.ec2.internal   Ready    node     10m   v1.16.7
+root@ip-172-31-87-150:~#
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: Software caused connection abort
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Network error: No route to host
+Authenticating with public key "Imported-Openssh-Key: C:\Users\Manoher Raghavendra\Downloads\minikube_aws.pem"
+     ┌────────────────────────────────────────────────────────────────────┐
+     │                        • MobaXterm 11.1 •                          │
+     │            (SSH client, X-server and networking tools)             │
+     │                                                                    │
+     │ ➤ SSH session to ubuntu@34.201.134.76                              │
+     │   • SSH compression : ✔                                            │
+     │   • SSH-browser     : ✔                                            │
+     │   • X11-forwarding  : ✔  (remote display is forwarded through SSH) │
+     │   • DISPLAY         : ✔  (automatically set on remote server)      │
+     │                                                                    │
+     │ ➤ For more info, ctrl+click on help or visit our website           │
+     └────────────────────────────────────────────────────────────────────┘
+
+Welcome to Ubuntu 18.04.3 LTS (GNU/Linux 4.15.0-1057-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sun Mar  1 08:18:56 UTC 2020
+
+  System load:  0.0               Processes:           96
+  Usage of /:   17.5% of 7.69GB   Users logged in:     1
+  Memory usage: 21%               IP address for eth0: 172.31.87.150
+  Swap usage:   0%
+
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+0 packages can be updated.
+0 updates are security updates.
+
+
+Last login: Sun Mar  1 07:50:41 2020 from 183.83.173.87
+ubuntu@ip-172-31-87-150:~$ sudo -i
+root@ip-172-31-87-150:~# kubectl run hello-minikube --image=k8s.gcr.io/echoserver:1.10 --port=8080
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+deployment.apps/hello-minikube created
+root@ip-172-31-87-150:~# kubectl expose deployment hello-minikube --type=NodePort
+service/hello-minikube exposed
+root@ip-172-31-87-150:~# kubectl get services
+NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+hello-minikube   NodePort    100.68.62.129   <none>        8080:31659/TCP   18s
+kubernetes       ClusterIP   100.64.0.1      <none>        443/TCP          16m
+root@ip-172-31-87-150:~# kops delete cluster --name test.k8s.local --yes
+
+State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://github.com/kubernetes/kops/blob/master/docs/state.md.
+root@ip-172-31-87-150:~#
+root@ip-172-31-87-150:~#
+root@ip-172-31-87-150:~# kops delete cluster --name test.k8s.local --yes
+
+State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://github.com/kubernetes/kops/blob/master/docs/state.md.
+root@ip-172-31-87-150:~# kops delete cluster --name test.k8s.local --yes --state=s3://demo.k8s.valaxy
+TYPE                    NAME                                                                            ID
+autoscaling-config      master-us-east-1d.masters.test.k8s.local-20200301075820                         master-us-east-1d.masters.test.k8s.local-20200301075820
+autoscaling-config      nodes.test.k8s.local-20200301075820                                             nodes.test.k8s.local-20200301075820
+autoscaling-group       master-us-east-1d.masters.test.k8s.local                                        master-us-east-1d.masters.test.k8s.local
+autoscaling-group       nodes.test.k8s.local                                                            nodes.test.k8s.local
+dhcp-options            test.k8s.local                                                                  dopt-07fa81017d4f558fc
+iam-instance-profile    masters.test.k8s.local                                                          masters.test.k8s.local
+iam-instance-profile    nodes.test.k8s.local                                                            nodes.test.k8s.local
+iam-role                masters.test.k8s.local                                                          masters.test.k8s.local
+iam-role                nodes.test.k8s.local                                                            nodes.test.k8s.local
+instance                master-us-east-1d.masters.test.k8s.local                                        i-0062edd12aba5ccde
+instance                nodes.test.k8s.local                                                            i-038a7c1d0d797d84f
+internet-gateway        test.k8s.local                                                                  igw-0ea56980b7fb08495
+keypair                 kubernetes.test.k8s.local-98:37:b4:b5:ab:38:47:14:20:58:0b:93:28:0f:05:dd       kubernetes.test.k8s.local-98:37:b4:b5:ab:38:47:14:20:58:0b:93:28:0f:05:dd
+load-balancer           api.test.k8s.local                                                              api-test-k8s-local-7afed8
+route-table             test.k8s.local                                                                  rtb-0861c2da76b716931
+security-group          api-elb.test.k8s.local                                                          sg-0f2db1b3cac96f990
+security-group          masters.test.k8s.local                                                          sg-09d9169540eec91a7
+security-group          nodes.test.k8s.local                                                            sg-0d5c50a95426a2361
+subnet                  us-east-1d.test.k8s.local                                                       subnet-0c18e39c4ebe229a6
+volume                  d.etcd-events.test.k8s.local                                                    vol-0292b0b8310f818d5
+volume                  d.etcd-main.test.k8s.local                                                      vol-0cdf4e7cd56e44cf4
+vpc                     test.k8s.local                                                                  vpc-0c3c1dcec6250a209
+
+load-balancer:api-test-k8s-local-7afed8 ok
+iam-instance-profile:nodes.test.k8s.local       ok
+iam-instance-profile:masters.test.k8s.local     ok
+iam-role:masters.test.k8s.local ok
+keypair:kubernetes.test.k8s.local-98:37:b4:b5:ab:38:47:14:20:58:0b:93:28:0f:05:dd       ok
+iam-role:nodes.test.k8s.local   ok
+instance:i-0062edd12aba5ccde    ok
+instance:i-038a7c1d0d797d84f    ok
+autoscaling-group:master-us-east-1d.masters.test.k8s.local      ok
+autoscaling-group:nodes.test.k8s.local  ok
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+volume:vol-0292b0b8310f818d5    still has dependencies, will retry
+volume:vol-0cdf4e7cd56e44cf4    still has dependencies, will retry
+autoscaling-config:nodes.test.k8s.local-20200301075820  ok
+autoscaling-config:master-us-east-1d.masters.test.k8s.local-20200301075820      ok
+security-group:sg-09d9169540eec91a7     still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+security-group:sg-0f2db1b3cac96f990     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        vpc:vpc-0c3c1dcec6250a209
+        volume:vol-0292b0b8310f818d5
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        volume:vol-0cdf4e7cd56e44cf4
+        security-group:sg-09d9169540eec91a7
+        security-group:sg-0f2db1b3cac96f990
+        internet-gateway:igw-0ea56980b7fb08495
+volume:vol-0cdf4e7cd56e44cf4    still has dependencies, will retry
+volume:vol-0292b0b8310f818d5    still has dependencies, will retry
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+security-group:sg-0f2db1b3cac96f990     still has dependencies, will retry
+security-group:sg-09d9169540eec91a7     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        volume:vol-0292b0b8310f818d5
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        volume:vol-0cdf4e7cd56e44cf4
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        security-group:sg-0f2db1b3cac96f990
+        internet-gateway:igw-0ea56980b7fb08495
+        security-group:sg-09d9169540eec91a7
+volume:vol-0cdf4e7cd56e44cf4    still has dependencies, will retry
+volume:vol-0292b0b8310f818d5    still has dependencies, will retry
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-09d9169540eec91a7     still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+security-group:sg-0f2db1b3cac96f990     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        subnet:subnet-0c18e39c4ebe229a6
+        volume:vol-0cdf4e7cd56e44cf4
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        security-group:sg-09d9169540eec91a7
+        security-group:sg-0f2db1b3cac96f990
+        internet-gateway:igw-0ea56980b7fb08495
+        volume:vol-0292b0b8310f818d5
+        vpc:vpc-0c3c1dcec6250a209
+volume:vol-0cdf4e7cd56e44cf4    still has dependencies, will retry
+volume:vol-0292b0b8310f818d5    still has dependencies, will retry
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0f2db1b3cac96f990     still has dependencies, will retry
+security-group:sg-09d9169540eec91a7     still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        internet-gateway:igw-0ea56980b7fb08495
+        security-group:sg-09d9169540eec91a7
+        security-group:sg-0f2db1b3cac96f990
+        volume:vol-0292b0b8310f818d5
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        volume:vol-0cdf4e7cd56e44cf4
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+volume:vol-0cdf4e7cd56e44cf4    ok
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+volume:vol-0292b0b8310f818d5    ok
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+security-group:sg-0f2db1b3cac96f990     ok
+security-group:sg-09d9169540eec91a7     ok
+Not all resources deleted; waiting before reattempting deletion
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+        vpc:vpc-0c3c1dcec6250a209
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        internet-gateway:igw-0ea56980b7fb08495
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        internet-gateway:igw-0ea56980b7fb08495
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+        vpc:vpc-0c3c1dcec6250a209
+subnet:subnet-0c18e39c4ebe229a6 still has dependencies, will retry
+internet-gateway:igw-0ea56980b7fb08495  still has dependencies, will retry
+security-group:sg-0d5c50a95426a2361     still has dependencies, will retry
+Not all resources deleted; waiting before reattempting deletion
+        vpc:vpc-0c3c1dcec6250a209
+        subnet:subnet-0c18e39c4ebe229a6
+        dhcp-options:dopt-07fa81017d4f558fc
+        route-table:rtb-0861c2da76b716931
+        security-group:sg-0d5c50a95426a2361
+        internet-gateway:igw-0ea56980b7fb08495
+security-group:sg-0d5c50a95426a2361     ok
+subnet:subnet-0c18e39c4ebe229a6 ok
+internet-gateway:igw-0ea56980b7fb08495  ok
+route-table:rtb-0861c2da76b716931       ok
+vpc:vpc-0c3c1dcec6250a209       ok
+dhcp-options:dopt-07fa81017d4f558fc     ok
+Deleted kubectl config for test.k8s.local
+
+Deleted cluster: "test.k8s.local"
+root@ip-172-31-87-150:~#
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Session stopped
+    - Press <return> to exit tab
+    - Press R to restart session
+    - Press S to save terminal output to file
+
+Server unexpectedly closed network connection
